@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Banco de Horas">
+<meta name="theme-color" content="#0f5c6e">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAFBUlEQVR4nO3dUZLTSBBF0WKCf1jgsIVhLayBDbIEPoowGrufLcmqypdZ93wTgZS6TnULwvr05d//GvCRf6IPAL6IAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQB6XP0AYT59fPH/j/89dv3cUdi69MiX8FwKIU9VsilchyXB6FUDaVgHNOaeFSsklJxBGaxVSaRCnGYNPEoeyW547DNYitvIlnjSJHFVsZEUj4ES1dGy3nMyTZHxhHfSbRCMsVxbRmHLlLgXx0oRxyXXJsLL4nb8QySII43r8TQa+B8bO9zj+P09CfPPctxHuIbR8ZxZzzmJ0zjODFlq/lmP/7O8TlHgcmeOB7D39LtNsfRGbllcSf16XjFUfV/ZyU9L6PbStIJ7hH4wO0dLpsjqoznf++1Caar32Jz7J/a12/fHaZ2zqGDd9gfFnHslDeLrURnER/Hzo9Iopm+tPNcwpdHcBwLltGl6CMyjmXL6Pz7iL+tPFe1jM787MLi2POBMJ/dJfacY9TyiImDMrZs+3C/rSBQQBysjUeey2N2HJShGPZhd1tZs4zO7dynxhH+yK+AmTP02hxuH535rCYwLw7WxlWmTdJoc1h9aAL5zMElDp+JODCZxqQ4uKdca848XTYHDM2I42XmJlvUysuZTFgebA5I8XGwNpTwyQyPgx9Fxxk92/jNAVvBcYRvTnOx82FzQBobBz9wjDZ0wpGbg3vKHoFT4rYCiTggEQck4oA0MI6Z34tS2/NZjfuFhc0BiTggEQck4oBEHM/8+vlj5X8BII7Xlk2EOPZaMJHP0QcQ7O4RwsvL3//AIg9p2Bx/7V8Mi2wR4jivfCLE8cfpy1w4EeL4481vVS+ZCHH8D4lsEccHSKQb+76VAv9q7/Dm2KgxsjleWHmLEMcuayZCHAeslghxHPZOIil+zLpJ8L4VT9PeNlf2fSu5PignHEpkxDSGTpjbygVSv7PyiRzveEvheSLn6ln3HW8lVdoiw+MoM6lD7hIZNITRs43fHJXuLHfefy5y4cGcEB9HeXl354w4HL5vNR2Hb/Zlc0CaFEfe1eppzjxdNgd3li2TabjE0WwmEs5nDvPi4M5ylWmTNNoczelDE8VqAlPjYHm8b+YMvTZHM/voTOZ27rPjMHwptwnDF7kHbA76eGRYRjO8rcBHTBwsjy3PtdECNwd9dLZlNP/bSu0+zM8uwftWzCd42s7zWvd9K8v24V9GC4+jLdlHijKaQxz71egj0VmM/X6O/Q6NLPwjdU66c3TZHIdmkejDd5OujOYTRyvdR8Yyms9t5eboVfcZ5YdSn45dHO3UVrCaaVfgLIxuKzcnZuR2lylQRvPcHN3p6x045YzH/IRvHF2WcWc5zkPc42ge3wSqOB/b+xLE0S76keLCK+F2PIPkiKO79qfOwMcq/ll0meJofr+VnJCljJYuji5pIomy6Byfc7yUbsot5zGn3Bw3KVZIxiy63HF0tonkzaKrEMeNSSXZm7gpFUcXmEiZLLqCcdxMq6RYEzeV49i6PJSqQWytEsejpP87a6Z148BLKR+CYQ7igEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgD0m94sgh/3UuK0AAAAABJRU5ErkJggg==">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%20%22Banco%20de%20Horas%20e%20Escalas%22%2C%20%22short_name%22%3A%20%22Banco%20Horas%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22start_url%22%3A%20%22./index.html%22%2C%20%22background_color%22%3A%20%22%23f4f6f7%22%2C%20%22theme_color%22%3A%20%22%230f5c6e%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAFBUlEQVR4nO3dUZLTSBBF0WKCf1jgsIVhLayBDbIEPoowGrufLcmqypdZ93wTgZS6TnULwvr05d//GvCRf6IPAL6IAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQB6XP0AYT59fPH/j/89dv3cUdi69MiX8FwKIU9VsilchyXB6FUDaVgHNOaeFSsklJxBGaxVSaRCnGYNPEoeyW547DNYitvIlnjSJHFVsZEUj4ES1dGy3nMyTZHxhHfSbRCMsVxbRmHLlLgXx0oRxyXXJsLL4nb8QySII43r8TQa%2BB8bO9zj%2BP09CfPPctxHuIbR8ZxZzzmJ0zjODFlq/lmP/7O8TlHgcmeOB7D39LtNsfRGbllcSf16XjFUfV/ZyU9L6PbStIJ7hH4wO0dLpsjqoznf%2B%2B1Caar32Jz7J/a12/fHaZ2zqGDd9gfFnHslDeLrURnER/Hzo9Iopm%2BtPNcwpdHcBwLltGl6CMyjmXL6Pz7iL%2BtPFe1jM787MLi2POBMJ/dJfacY9TyiImDMrZs%2B3C/rSBQQBysjUeey2N2HJShGPZhd1tZs4zO7dynxhH%2ByK%2BAmTP02hxuH535rCYwLw7WxlWmTdJoc1h9aAL5zMElDp%2BJODCZxqQ4uKdca848XTYHDM2I42XmJlvUysuZTFgebA5I8XGwNpTwyQyPgx9Fxxk92/jNAVvBcYRvTnOx82FzQBobBz9wjDZ0wpGbg3vKHoFT4rYCiTggEQck4oA0MI6Z34tS2/NZjfuFhc0BiTggEQck4oBEHM/8%2Bvlj5X8BII7Xlk2EOPZaMJHP0QcQ7O4RwsvL3//AIg9p2Bx/7V8Mi2wR4jivfCLE8cfpy1w4EeL4481vVS%2BZCHH8D4lsEccHSKQb%2B76VAv9q7/Dm2KgxsjleWHmLEMcuayZCHAeslghxHPZOIil%2BzLpJ8L4VT9PeNlf2fSu5PignHEpkxDSGTpjbygVSv7PyiRzveEvheSLn6ln3HW8lVdoiw%2BMoM6lD7hIZNITRs43fHJXuLHfefy5y4cGcEB9HeXl354w4HL5vNR2Hb/Zlc0CaFEfe1eppzjxdNgd3li2TabjE0WwmEs5nDvPi4M5ylWmTNNoczelDE8VqAlPjYHm8b%2BYMvTZHM/voTOZ27rPjMHwptwnDF7kHbA76eGRYRjO8rcBHTBwsjy3PtdECNwd9dLZlNP/bSu0%2BzM8uwftWzCd42s7zWvd9K8v24V9GC4%2BjLdlHijKaQxz71egj0VmM/X6O/Q6NLPwjdU66c3TZHIdmkejDd5OujOYTRyvdR8Yyms9t5eboVfcZ5YdSn45dHO3UVrCaaVfgLIxuKzcnZuR2lylQRvPcHN3p6x045YzH/IRvHF2WcWc5zkPc42ge3wSqOB/b%2BxLE0S76keLCK%2BF2PIPkiKO79qfOwMcq/ll0meJofr%2BVnJCljJYuji5pIomy6Byfc7yUbsot5zGn3Bw3KVZIxiy63HF0tonkzaKrEMeNSSXZm7gpFUcXmEiZLLqCcdxMq6RYEzeV49i6PJSqQWytEsejpP87a6Z148BLKR%2BCYQ7igEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgD0m94sgh/3UuK0AAAAABJRU5ErkJggg%3D%3D%22%2C%20%22sizes%22%3A%20%22180x180%22%2C%20%22type%22%3A%20%22image/png%22%7D%5D%7D">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAFBUlEQVR4nO3dUZLTSBBF0WKCf1jgsIVhLayBDbIEPoowGrufLcmqypdZ93wTgZS6TnULwvr05d//GvCRf6IPAL6IAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQB6XP0AYT59fPH/j/89dv3cUdi69MiX8FwKIU9VsilchyXB6FUDaVgHNOaeFSsklJxBGaxVSaRCnGYNPEoeyW547DNYitvIlnjSJHFVsZEUj4ES1dGy3nMyTZHxhHfSbRCMsVxbRmHLlLgXx0oRxyXXJsLL4nb8QySII43r8TQa+B8bO9zj+P09CfPPctxHuIbR8ZxZzzmJ0zjODFlq/lmP/7O8TlHgcmeOB7D39LtNsfRGbllcSf16XjFUfV/ZyU9L6PbStIJ7hH4wO0dLpsjqoznf++1Caar32Jz7J/a12/fHaZ2zqGDd9gfFnHslDeLrURnER/Hzo9Iopm+tPNcwpdHcBwLltGl6CMyjmXL6Pz7iL+tPFe1jM787MLi2POBMJ/dJfacY9TyiImDMrZs+3C/rSBQQBysjUeey2N2HJShGPZhd1tZs4zO7dynxhH+yK+AmTP02hxuH535rCYwLw7WxlWmTdJoc1h9aAL5zMElDp+JODCZxqQ4uKdca848XTYHDM2I42XmJlvUysuZTFgebA5I8XGwNpTwyQyPgx9Fxxk92/jNAVvBcYRvTnOx82FzQBobBz9wjDZ0wpGbg3vKHoFT4rYCiTggEQck4oA0MI6Z34tS2/NZjfuFhc0BiTggEQck4oBEHM/8+vlj5X8BII7Xlk2EOPZaMJHP0QcQ7O4RwsvL3//AIg9p2Bx/7V8Mi2wR4jivfCLE8cfpy1w4EeL4481vVS+ZCHH8D4lsEccHSKQb+76VAv9q7/Dm2KgxsjleWHmLEMcuayZCHAeslghxHPZOIil+zLpJ8L4VT9PeNlf2fSu5PignHEpkxDSGTpjbygVSv7PyiRzveEvheSLn6ln3HW8lVdoiw+MoM6lD7hIZNITRs43fHJXuLHfefy5y4cGcEB9HeXl354w4HL5vNR2Hb/Zlc0CaFEfe1eppzjxdNgd3li2TabjE0WwmEs5nDvPi4M5ylWmTNNoczelDE8VqAlPjYHm8b+YMvTZHM/voTOZ27rPjMHwptwnDF7kHbA76eGRYRjO8rcBHTBwsjy3PtdECNwd9dLZlNP/bSu0+zM8uwftWzCd42s7zWvd9K8v24V9GC4+jLdlHijKaQxz71egj0VmM/X6O/Q6NLPwjdU66c3TZHIdmkejDd5OujOYTRyvdR8Yyms9t5eboVfcZ5YdSn45dHO3UVrCaaVfgLIxuKzcnZuR2lylQRvPcHN3p6x045YzH/IRvHF2WcWc5zkPc42ge3wSqOB/b+xLE0S76keLCK+F2PIPkiKO79qfOwMcq/ll0meJofr+VnJCljJYuji5pIomy6Byfc7yUbsot5zGn3Bw3KVZIxiy63HF0tonkzaKrEMeNSSXZm7gpFUcXmEiZLLqCcdxMq6RYEzeV49i6PJSqQWytEsejpP87a6Z148BLKR+CYQ7igEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgD0m94sgh/3UuK0AAAAABJRU5ErkJggg==">
+<title>Banco de Horas e Escalas</title>
+<style>
+:root{--bg:#f4f6f7;--card:#fff;--ink:#17252b;--mut:#5b6b72;--line:#d8e0e3;--pri:#0f5c6e;--pri2:#e3f0f3;--vio:#b42318;--vio2:#fde8e6;--avi:#9a6700;--avi2:#fff4d6;--inf:#1f5fa8;--inf2:#e5efff;--ok:#1a7f45;--ok2:#e3f5ea}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+header{position:sticky;top:0;z-index:5;background:var(--pri);color:#fff;padding:calc(env(safe-area-inset-top) + 10px) 16px 0}
+header h1{margin:0;font-size:20px;font-weight:650;display:flex;justify-content:space-between;align-items:center;gap:8px}
+header small{font-weight:400;opacity:.85;font-size:14px}
+nav{display:flex;gap:4px;overflow-x:auto;margin-top:8px;scrollbar-width:none}
+nav button{flex:1 0 auto;min-height:52px;padding:0 16px;border:0;border-radius:12px 12px 0 0;background:transparent;color:#d8eef2;font-size:17px;font-weight:600}
+nav button.on{background:var(--bg);color:var(--pri)}
+main{padding:16px;padding-bottom:calc(env(safe-area-inset-bottom) + 24px);max-width:1400px;margin:0 auto}
+section{display:none}section.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+.card h2{margin:0 0 12px;font-size:19px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (orientation:portrait),(max-width:900px){.grid2{grid-template-columns:1fr}}
+button.b,label.b{min-height:52px;min-width:52px;padding:0 18px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:17px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px;cursor:pointer}
+button.p{background:var(--pri);border-color:var(--pri);color:#fff}
+button.g{background:var(--ok);border-color:var(--ok);color:#fff}
+button.r{background:var(--vio);border-color:var(--vio);color:#fff}
+button.big{min-height:84px;font-size:21px;flex:1 1 180px}
+button:disabled{opacity:.4}
+select,input{min-height:52px;font-size:17px;padding:0 12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+input[type=date],input[type=time],input[type=month]{min-width:150px}
+.f{display:flex;flex-direction:column;gap:4px;font-size:14px;color:var(--mut)}
+.pessoas{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.pessoa{min-height:72px;border-radius:12px;border:2px solid var(--line);background:#fff;font-size:16px;font-weight:600;text-align:left;padding:8px 12px;line-height:1.2}
+.pessoa small{display:block;font-weight:400;color:var(--mut);font-size:13px}
+.pessoa.on{border-color:var(--pri);background:var(--pri2)}
+.pessoa.dentro::after{content:"● a trabalhar";display:block;color:var(--ok);font-size:12px;margin-top:2px}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{padding:8px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{font-size:13px;color:var(--mut);font-weight:600;position:sticky;top:0;background:#fff}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.esc td.t{text-align:center;padding:4px}
+.cel{min-width:58px;min-height:48px;border-radius:10px;border:1px solid var(--line);font-weight:700;font-size:15px;background:#fff}
+.cel.DO{background:#e9ecef;color:#495057}.cel.DC,.cel.LV{background:#f5f6f7;color:#868e96}
+.cel.M{background:#e3f0f3;color:#0f5c6e}.cel.T{background:#fff1e0;color:#8a4b00}.cel.N{background:#e8e3f7;color:#4b3a8f}.cel.P{background:#e6f5ec;color:#1a7f45}.cel.A{background:#fde8e6;color:#b42318}
+.cel.ch{outline:3px solid var(--avi)}
+.tag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:700}
+.tag.violacao{background:var(--vio2);color:var(--vio)}.tag.aviso{background:var(--avi2);color:var(--avi)}.tag.info{background:var(--inf2);color:var(--inf)}.tag.ok{background:var(--ok2);color:var(--ok)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:16px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+.kpi b{display:block;font-size:28px;font-variant-numeric:tabular-nums}.kpi span{color:var(--mut);font-size:14px}
+.al{border-left:5px solid var(--line);padding:10px 12px;margin:8px 0;background:#fff;border-radius:8px}
+.al.violacao{border-color:var(--vio)}.al.aviso{border-color:var(--avi)}.al.info{border-color:var(--inf)}
+.al .m{font-size:13px;color:var(--mut)}
+.msg{padding:12px;border-radius:12px;margin:10px 0;font-size:16px}
+.msg.e{background:var(--vio2);color:var(--vio)}.msg.o{background:var(--ok2);color:var(--ok)}.msg.w{background:var(--avi2);color:#6b4800}
+.mut{color:var(--mut);font-size:14px}
+.relogio{font-size:44px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:1px}
+#d-regras table th,#d-regras table td{white-space:normal}
+#d-regras table th:nth-child(2),#d-regras table td:nth-child(2),#d-regras table th:last-child,#d-regras table td:last-child{white-space:nowrap}
+.hdr-r{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.pin-btn{min-height:36px;padding:0 12px;border-radius:999px;border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.14);color:#fff;font-size:13px;font-weight:600;cursor:pointer}
+.pin-btn.restr{background:#fff4d6;color:#6b4800;border-color:#f3d27a}
+.modal-bg{position:fixed;inset:0;background:rgba(15,30,36,.55);display:none;align-items:center;justify-content:center;z-index:30;padding:16px}
+.modal-bg.on{display:flex}
+.modal{background:#fff;color:var(--ink);border-radius:16px;padding:20px;max-width:400px;width:100%;box-shadow:0 12px 32px rgba(0,0,0,.22)}
+.modal h3{margin:0 0 10px;font-size:19px}
+#toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom) + 20px);transform:translateX(-50%);background:#17252b;color:#fff;padding:14px 20px;border-radius:12px;font-size:16px;display:none;z-index:20;max-width:90vw}
+@media print{header,nav,.np,.modal-bg{display:none!important}section{display:none!important}section.imp{display:block!important}.card{border:0}}
+</style>
+</head>
+<body>
+<header>
+  <h1><span>Banco de Horas e Escalas</span><span class="hdr-r"><small id="hdr"></small><button class="pin-btn" id="hdr-modo" type="button"></button></span></h1>
+  <nav id="tabs">
+    <button data-t="registo" class="on">Registo</button>
+    <button data-t="escala">Escala</button>
+    <button data-t="saldos">Saldos</button>
+    <button data-t="alertas">Alertas</button>
+    <button data-t="relatorio">Relatório</button>
+    <button data-t="ausencias">Ausências e banco</button>
+    <button data-t="dados">Dados</button>
+  </nav>
+</header>
+<main>
+<!-- REGISTO -->
+<section id="s-registo" class="on">
+  <div class="grid2">
+    <div class="card">
+      <h2>Quem está a registar?</h2>
+      <div class="row np" style="margin-bottom:10px"><select id="r-eq"></select></div>
+      <div id="r-pessoas" class="pessoas"></div>
+    </div>
+    <div>
+      <div class="card">
+        <h2 id="r-nome">Escolha um colaborador</h2>
+        <div class="relogio" id="r-hora">--:--</div>
+        <div class="mut" id="r-estado"></div>
+        <div class="row" style="margin-top:12px">
+          <button class="b g big" id="r-entrar">Entrar</button>
+          <button class="b big" id="r-pausa">Iniciar pausa</button>
+          <button class="b r big" id="r-sair">Sair</button>
+        </div>
+        <div id="r-msg"></div>
+      </div>
+      <div class="card">
+        <h2>Registo manual ou correção</h2>
+        <div class="row">
+          <label class="f">Data<input type="date" id="m-data"></label>
+          <label class="f">Entrada<input type="time" id="m-ent"></label>
+          <label class="f">Saída<input type="time" id="m-sai"></label>
+        </div>
+        <div class="row" style="margin-top:8px">
+          <label class="f" style="flex:1">Pausas (HH:MM-HH:MM; separadas por ;)<input id="m-pau" placeholder="13:00-14:00"></label>
+          <label class="f">Motivo do suplementar<select id="m-mot"><option value="">Nenhum</option><option value="acrescimo_eventual">Acréscimo eventual de trabalho</option><option value="forca_maior">Força maior</option><option value="prejuizo_grave">Prejuízo grave</option></select></label>
+        </div>
+        <div class="row" style="margin-top:12px"><button class="b" id="m-val">Verificar</button><button class="b p" id="m-grv">Gravar registo</button></div>
+        <div id="m-msg"></div>
+      </div>
+    </div>
+  </div>
+  <div class="card"><h2>Últimos registos do colaborador</h2><div class="tw"><table id="r-lista"></table></div></div>
+</section>
+<!-- ESCALA -->
+<section id="s-escala">
+  <div class="card np">
+    <div class="row">
+      <button class="b" id="e-ant">‹ Semana</button>
+      <label class="f">Semana de<input type="date" id="e-sem"></label>
+      <button class="b" id="e-seg">Semana ›</button>
+      <select id="e-eq"></select>
+      <button class="b p" id="e-prop">Propor escala automática</button>
+      <button class="b" id="e-val">Validar semana</button>
+    </div>
+    <p class="mut">Toque numa célula para mudar o turno. Legenda: DO descanso obrigatório, DC descanso complementar, LV livre; células a vermelho são ausências.</p>
+  </div>
+  <div class="card"><div class="tw"><table class="esc" id="e-grid"></table></div><div id="e-faltas"></div></div>
+  <div class="card" id="e-prop-box" style="display:none"><h2>Proposta automática</h2><div id="e-prop-info"></div>
+    <div class="row" style="margin-top:10px"><button class="b g" id="e-aplicar">Aplicar proposta à escala</button><button class="b" id="e-descartar">Descartar</button></div></div>
+  <div class="card"><h2>Alertas da semana</h2><div id="e-al"></div></div>
+</section>
+<!-- SALDOS -->
+<section id="s-saldos">
+  <div class="kpis" id="k-saldos"></div>
+  <div class="card"><div class="row np" style="margin-bottom:10px"><select id="sa-eq"></select></div><div class="tw"><table id="sa-t"></table></div>
+  <p class="mut">Saldo = créditos por gozar menos dívida. Créditos que passam o prazo de compensação viram pagamento devido (não se perdem). Limites do banco e do suplementar conforme regras.json.</p></div>
+</section>
+<!-- ALERTAS -->
+<section id="s-alertas">
+  <div class="kpis" id="k-al"></div>
+  <div class="card np"><div class="row"><select id="al-niv"><option value="">Todos os níveis</option><option value="violacao">Violações</option><option value="aviso">Avisos</option><option value="info">Informação</option></select>
+    <select id="al-eq"></select><select id="al-orig"><option value="">Registos e escala</option><option value="registo">Só registos</option><option value="escala">Só escala</option><option value="banco">Banco</option><option value="colaborador">Colaborador</option></select></div></div>
+  <div class="card" id="al-lista"></div>
+</section>
+<!-- RELATORIO -->
+<section id="s-relatorio">
+  <div class="card np"><div class="row"><label class="f">Mês<input type="month" id="rel-mes"></label><label class="f">Colaborador<select id="rel-col"></select></label>
+    <button class="b" id="rel-imp">Imprimir / PDF</button><button class="b" id="rel-csv">Exportar CSV</button><button class="b" id="rel-res">Resumo de todos (CSV)</button></div></div>
+  <div class="card" id="rel-out"></div>
+</section>
+<!-- AUSENCIAS -->
+<section id="s-ausencias">
+  <div class="grid2">
+    <div class="card"><h2>Nova ausência ou férias</h2>
+      <div class="row"><label class="f">Colaborador<select id="au-col"></select></label><label class="f">Tipo<select id="au-tipo"></select></label></div>
+      <div class="row" style="margin-top:8px"><label class="f">Início<input type="date" id="au-ini"></label><label class="f">Fim<input type="date" id="au-fim"></label><label class="f">Horas (vazio = dia inteiro)<input id="au-h" inputmode="decimal" style="width:120px"></label></div>
+      <div class="row" style="margin-top:8px"><label class="f" style="flex:1">Nota<input id="au-nota"></label></div>
+      <div class="row" style="margin-top:12px"><button class="b p" id="au-grv">Gravar ausência</button></div><div id="au-msg"></div></div>
+    <div class="card"><h2>Movimento manual do banco</h2>
+      <div class="row"><label class="f">Colaborador<select id="mv-col"></select></label><label class="f">Tipo<select id="mv-tipo"></select></label></div>
+      <div class="row" style="margin-top:8px"><label class="f">Data<input type="date" id="mv-data"></label><label class="f">Horas<input id="mv-h" inputmode="decimal" style="width:120px"></label><label class="f" style="flex:1">Nota<input id="mv-nota"></label></div>
+      <div class="row" style="margin-top:12px"><button class="b p" id="mv-grv">Gravar movimento</button></div><div id="mv-msg"></div></div>
+  </div>
+  <div class="card"><h2>Ausências registadas</h2><div class="tw"><table id="au-t"></table></div></div>
+  <div class="card"><h2>Movimentos do banco (manuais e automáticos)</h2><div class="tw"><table id="mv-t"></table></div></div>
+</section>
+<!-- DADOS -->
+<section id="s-dados">
+  <div class="grid2">
+    <div class="card"><h2>Exportar</h2>
+      <p class="mut">O pacote JSON (<code>pacote-AAAA-MM-DD.json</code>) tem o mesmo formato do <code>motor.py exportar-pacote</code>; no computador: <code>python3 motor.py importar-pacote pacote-AAAA-MM-DD.json</code>.</p>
+      <div class="row"><button class="b p" id="d-json">Pacote JSON</button><button class="b" data-csv="colaboradores">colaboradores.csv</button><button class="b" data-csv="escala">escala.csv</button><button class="b" data-csv="registos">registos.csv</button><button class="b" data-csv="ausencias">ausencias.csv</button><button class="b" data-csv="movimentos_banco">movimentos_banco.csv</button><button class="b" id="d-res">resultados.json</button></div>
+      <div id="d-exp-aviso"></div></div>
+    <div class="card"><h2>Importar (merge por ID e data de atualização)</h2>
+      <p class="mut">Aceita o pacote JSON ou um CSV com o nome da tabela (colaboradores.csv, escala.csv, registos.csv, ausencias.csv, movimentos_banco.csv). Faz merge por <code>id</code> (vence o <code>updated_at</code> mais recente), sem apagar registos de outras lojas.</p>
+      <div class="row"><label class="b p" id="d-file-lbl">Escolher ficheiro<input type="file" id="d-file" accept=".json,.csv,application/json,text/csv" style="display:none"></label><button class="b r" id="d-reset">Repor dados de exemplo</button></div><div id="d-msg"></div></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h2>Privacidade e PIN (RGPD)</h2>
+      <p class="mut" id="rgpd-estado"></p>
+      <div class="row" id="rgpd-ctrl">
+        <label class="f">Novo PIN (mín. 4 dígitos)<input type="password" id="rgpd-pin" inputmode="numeric" placeholder="ex.: 1234" style="width:150px"></label>
+        <button class="b p" id="rgpd-set">Definir / alterar PIN</button>
+        <button class="b" id="rgpd-limpar">Remover PIN</button>
+      </div>
+      <div id="rgpd-msg"></div>
+      <p class="mut" style="margin-top:8px">Nota: o PIN (hash com sal e PBKDF2) e a vista restrita são só uma barreira local neste dispositivo (<code>localStorage</code>). Sem um servidor com autenticação, o sistema é um piloto de um só utilizador e não substitui um controlo de acessos real.</p>
+    </div>
+    <div class="card"><h2>Registo de auditoria</h2><div id="d-aud"></div></div>
+  </div>
+  <div class="card"><h2>Regras em vigor</h2><div id="d-regras"></div></div>
+  <div class="card"><h2>Sobre</h2><p class="mut" id="d-sobre"></p></div>
+</section>
+</main>
+<div class="modal-bg" id="pin-modal">
+  <div class="modal">
+    <h3>Desbloquear modo gestor</h3>
+    <p class="mut">Introduza o PIN para ver baixas médicas, dados familiares, valor/hora e funções de gestão.</p>
+    <label class="f" style="margin:10px 0">PIN<input type="password" id="pin-in" inputmode="numeric" autocomplete="off"></label>
+    <div id="pin-err"></div>
+    <div class="row" style="margin-top:12px;justify-content:flex-end"><button class="b" id="pin-cancel" type="button">Cancelar</button><button class="b p" id="pin-ok" type="button">Desbloquear</button></div>
+  </div>
+</div>
+<div id="toast"></div>
+<script>
+window.__ERROS__ = [];
+window.addEventListener("error", function (e) { window.__ERROS__.push(String(e.message || e)); var b = document.body; if (b) b.setAttribute("data-erros", window.__ERROS__.join(" | ")); });
+window.addEventListener("unhandledrejection", function (e) { window.__ERROS__.push("promise: " + String(e.reason)); document.body.setAttribute("data-erros", window.__ERROS__.join(" | ")); });
+</script>
+<script>
+/* motor.js: porta fiel do motor.py para JavaScript (app do iPad). Mesmo algoritmo, mesmos minutos inteiros.
+   Qualquer alteração aqui tem de ser feita também em motor.py; testes/test_paridade.py compara os dois. */
+(function (root) {
+  "use strict";
+  var VERSAO = "1.0.0";
+  var DIAS_PT = ["seg", "ter", "qua", "qui", "sex", "sab", "dom"];
+  var TIPOS_AUSENCIA = ["ferias", "baixa", "falta_justificada", "falta_injustificada", "licenca_parental", "compensacao_banco", "descanso_compensatorio", "formacao"];
+  var TIPOS_MOVIMENTO = ["credito", "compensacao", "ferias", "pagamento", "ajuste"];
+  var ESQUEMA = {
+    colaboradores: ["id", "nome", "equipa", "funcao", "tipo_contrato", "horas_semanais", "horas_diarias", "banco_horas", "concordancia_escrita_banco", "filho_menor_3", "filho_3_a_6_declaracao", "noturno_risco", "isento_horario", "isencao_acordo_escrito", "isencao_renuncia_retribuicao", "isencao_modalidade", "dias_descanso", "turno_base", "valor_hora_eur", "ativo", "nota", "updated_at"],
+    escala: ["data", "colaborador_id", "turno_id", "inicio", "fim", "pausas", "afixada_em", "origem", "updated_at"],
+    registos: ["id", "colaborador_id", "data", "entrada", "saida", "pausas", "motivo_suplementar", "origem", "registado_em", "nota", "updated_at"],
+    ausencias: ["id", "colaborador_id", "inicio", "fim", "tipo", "horas", "nota", "updated_at"],
+    movimentos_banco: ["id", "colaborador_id", "data", "tipo", "horas", "nota", "updated_at"]
+  };
+
+  function fdiv(a, b) { return Math.floor(a / b); }
+  function pad(n, w) { var s = String(n); while (s.length < w) s = "0" + s; return s; }
+  function dia_idx(s) { var p = String(s).slice(0, 10).split("-"); return Math.round(Date.UTC(+p[0], +p[1] - 1, +p[2]) / 86400000); }
+  function idx_dia(i) { var d = new Date(i * 86400000); return pad(d.getUTCFullYear(), 4) + "-" + pad(d.getUTCMonth() + 1, 2) + "-" + pad(d.getUTCDate(), 2); }
+  function dia_semana(i) { return ((i + 3) % 7 + 7) % 7; }
+  function segunda(i) { return i - dia_semana(i); }
+  function hm(s) { var p = String(s).trim().split(":"); if (p.length !== 2 || !/^\d+$/.test(p[0].trim()) || !/^\d+$/.test(p[1].trim())) throw new Error("hora"); return parseInt(p[0], 10) * 60 + parseInt(p[1], 10); }
+  function fmt_min(m) { var sinal = m < 0 ? "-" : ""; m = Math.abs(Math.trunc(m)); return sinal + fdiv(m, 60) + ":" + pad(m % 60, 2); }
+  function r2(x) { return Math.floor(x * 100 + 0.5) / 100; }
+  function f2(x) { return r2(x).toFixed(2); }
+  function dias_mes(y, m) { if (m === 2) return (y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0)) ? 29 : 28; return [4, 6, 9, 11].indexOf(m) >= 0 ? 30 : 31; }
+  function add_meses(i, n) {
+    var s = idx_dia(i), y = +s.slice(0, 4), m = +s.slice(5, 7), d = +s.slice(8, 10);
+    var m0 = m - 1 + n; y += fdiv(m0, 12); m = ((m0 % 12) + 12) % 12 + 1; d = Math.min(d, dias_mes(y, m));
+    return dia_idx(pad(y, 4) + "-" + pad(m, 2) + "-" + pad(d, 2));
+  }
+  function pascoa(y) {
+    var a = y % 19, b = fdiv(y, 100), c = y % 100, d = fdiv(b, 4), e = b % 4, f = fdiv(b + 8, 25), g = fdiv(b - f + 1, 3);
+    var h = (19 * a + b - d - g + 15) % 30, i = fdiv(c, 4), k = c % 4, l = (32 + 2 * e + 2 * i - h - k) % 7, m = fdiv(a + 11 * h + 22 * l, 451);
+    var mes = fdiv(h + l - 7 * m + 114, 31), dia = ((h + l - 7 * m + 114) % 31) + 1;
+    return dia_idx(pad(y, 4) + "-" + pad(mes, 2) + "-" + pad(dia, 2));
+  }
+  function ultimo_domingo(y, mes) { var i = dia_idx(pad(y, 4) + "-" + pad(mes, 2) + "-" + pad(dias_mes(y, mes), 2)); return i - ((dia_semana(i) + 1) % 7); }
+  function feriados_ano(y, regras) {
+    var out = {}, p = pascoa(y);
+    var moveis = { sexta_santa: [p - 2, "Sexta-Feira Santa"], pascoa: [p, "Domingo de Páscoa"], corpo_deus: [p + 60, "Corpo de Deus"], segunda_espirito_santo: [p + 50, "Segunda-Feira do Espírito Santo"] };
+    var nomes = { "01-01": "Ano Novo", "04-25": "Dia da Liberdade", "05-01": "Dia do Trabalhador", "06-10": "Dia de Portugal", "08-15": "Assunção de Nossa Senhora", "10-05": "Implantação da República", "11-01": "Todos os Santos", "12-01": "Restauração da Independência", "12-08": "Imaculada Conceição", "12-25": "Natal" };
+    regras.feriados.nacionais.valor.forEach(function (f) { if (moveis[f]) out[moveis[f][0]] = moveis[f][1]; else out[dia_idx(pad(y, 4) + "-" + f)] = nomes[f] || "Feriado"; });
+    regras.feriados.regionais_e_municipais.valor.forEach(function (f) {
+      if (!f.aplicar) return;
+      if (f.regra && moveis[f.regra]) out[moveis[f.regra][0]] = f.nome || moveis[f.regra][1];
+      else if (f.data) out[dia_idx(pad(y, 4) + "-" + f.data)] = f.nome || "Feriado";
+    });
+    return out;
+  }
+  function v(R) { var x = R; for (var i = 1; i < arguments.length; i++) x = x[arguments[i]]; return x.valor; }
+  function sim(x) { return ["sim", "s", "true", "1", "yes"].indexOf(String(x == null ? "" : x).trim().toLowerCase()) >= 0; }
+  function num(x, d) { if (d === undefined) d = 0; var s = String(x == null ? "" : x).replace(",", ".").trim(); if (s === "" || isNaN(Number(s))) return d; return Number(s); }
+  function g(o, k, d) { return (o[k] === undefined || o[k] === null) ? d : o[k]; }
+  function norm_colab(c) {
+    return {
+      id: c.id, nome: g(c, "nome", c.id), equipa: g(c, "equipa", ""), funcao: g(c, "funcao", ""), tipo_contrato: g(c, "tipo_contrato", "tempo_completo") || "tempo_completo",
+      sem: Math.round(num(c.horas_semanais, 40) * 60), base: Math.round(num(c.horas_diarias, 8) * 60),
+      banco: sim(g(c, "banco_horas", "")), concordancia: sim(g(c, "concordancia_escrita_banco", "")), filho3: sim(g(c, "filho_menor_3", "")), filho3_6_decl: sim(g(c, "filho_3_a_6_declaracao", "")),
+      risco: sim(g(c, "noturno_risco", "")), isento: sim(g(c, "isento_horario", "")),
+      isencao_acordo: sim(g(c, "isencao_acordo_escrito", "")), isencao_renuncia: sim(g(c, "isencao_renuncia_retribuicao", "")),
+      isencao_mod: String(c.isencao_modalidade || "").trim(),
+      descanso: String(c.dias_descanso || "").split(",").map(function (d) { return d.trim(); }).filter(Boolean),
+      turno_base: g(c, "turno_base", ""), vh: num(c.valor_hora_eur, 0), ativo: g(c, "ativo", "sim") === "" || sim(g(c, "ativo", "sim"))
+    };
+  }
+  function parse_pausas(txt) {
+    var out = [];
+    String(txt || "").replace(/,/g, ";").split(";").forEach(function (p) {
+      p = p.trim(); if (!p) return;
+      var ab = p.split("-"); if (ab.length !== 2) throw new Error("pausa"); out.push([hm(ab[0]), hm(ab[1])]);
+    });
+    return out;
+  }
+  function construir_periodo(d, ent, sai, pausas_txt) {
+    var ini = d * 1440 + hm(ent), fim = d * 1440 + hm(sai);
+    if (fim <= ini) fim += 1440;
+    var ps = [];
+    parse_pausas(pausas_txt).forEach(function (x) {
+      var a = d * 1440 + x[0]; if (a < ini) a += 1440;
+      var b = d * 1440 + x[1]; while (b <= a) b += 1440;
+      a = Math.max(a, ini); b = Math.min(b, fim);
+      if (b > a) ps.push([a, b]);
+    });
+    ps.sort(function (x, y) { return x[0] - y[0] || x[1] - y[1]; });
+    var segs = [], cur = ini;
+    ps.forEach(function (x) { if (x[0] > cur) segs.push([cur, x[0]]); cur = Math.max(cur, x[1]); });
+    if (fim > cur) segs.push([cur, fim]);
+    var trab = 0; segs.forEach(function (s) { trab += s[1] - s[0]; });
+    return { ini: ini, fim: fim, pausas: ps, segs: segs, trab: trab, data: d };
+  }
+  function fatias_periodo(p, ao_dia_inicio) {
+    if (ao_dia_inicio !== false) return [p];
+    var dias = {};
+    function parte(lista, key) {
+      (lista || []).forEach(function (ab) {
+        var cur = ab[0], b = ab[1];
+        while (cur < b) {
+          var nxt = Math.min(b, (Math.floor(cur / 1440) + 1) * 1440);
+          var d = Math.floor(cur / 1440);
+          if (!dias[d]) dias[d] = { segs: [], pausas: [] };
+          dias[d][key].push([cur, nxt]);
+          cur = nxt;
+        }
+      });
+    }
+    parte(p.segs, "segs"); parte(p.pausas, "pausas");
+    var ks = Object.keys(dias).map(Number).sort(function (a, b) { return a - b; }), out = [];
+    ks.forEach(function (d) {
+      var segs = dias[d].segs, pausas = dias[d].pausas;
+      if (!segs.length && !pausas.length) return;
+      var ini = segs.length ? segs[0][0] : pausas[0][0], fim = segs.length ? segs[segs.length - 1][1] : pausas[pausas.length - 1][1];
+      if (pausas.length) { ini = Math.min(ini, pausas[0][0]); fim = Math.max(fim, pausas[pausas.length - 1][1]); }
+      var trab = 0; segs.forEach(function (x) { trab += x[1] - x[0]; });
+      var q = Object.assign({}, p, { ini: ini, fim: fim, pausas: pausas, segs: segs, trab: trab, data: d });
+      out.push(q);
+    });
+    return out.length ? out : [p];
+  }
+  function modalidade_isencao(col, regras) { return col.isencao_mod || String(v(regras, "isencao_horario", "modalidade_supletiva") || "sem_limite"); }
+  function isencao_sem_teto(col, regras) { return !!col.isento && ["sem_limite", "alargamento_determinado"].indexOf(modalidade_isencao(col, regras)) >= 0; }
+  function sobrepor(a1, b1, a2, b2) { return Math.max(0, Math.min(b1, b2) - Math.max(a1, a2)); }
+  function minutos_noturnos(segs, n_ini, n_fim) {
+    var tot = 0;
+    segs.forEach(function (s) {
+      for (var k = fdiv(s[0], 1440) - 1; k < fdiv(s[1], 1440) + 1; k++) {
+        var w1, w2;
+        if (n_ini > n_fim) { w1 = k * 1440 + n_ini; w2 = (k + 1) * 1440 + n_fim; } else { w1 = k * 1440 + n_ini; w2 = k * 1440 + n_fim; }
+        tot += sobrepor(s[0], s[1], w1, w2);
+      }
+    });
+    return tot;
+  }
+  function turno_periodo(turnos, tid, d) {
+    var t = turnos[tid]; if (!t) return null;
+    return construir_periodo(d, t.inicio, t.fim, (t.pausas || []).map(function (p) { return p[0] + "-" + p[1]; }).join(";"));
+  }
+  function cmp(a, b) { for (var i = 0; i < a.length; i++) { if (a[i] < b[i]) return -1; if (a[i] > b[i]) return 1; } return 0; }
+  function Alertas() { this.lista = []; this.chaves = {}; }
+  Alertas.prototype.add = function (nivel, regra, artigo, colab, data, origem, msg, valor, chave) {
+    var ds = typeof data === "number" ? idx_dia(data) : String(data);
+    var k = [regra, colab, ds, origem, chave || ""].join("|");
+    if (this.chaves[k]) return; this.chaves[k] = 1;
+    this.lista.push({ id: k, nivel: nivel, regra: regra, artigo: artigo, colaborador_id: colab, data: ds, origem: origem, mensagem: msg, valor_min: Math.trunc(valor || 0) });
+  };
+  function limites_banco(R) { var regime = v(R, "banco_horas", "regime"); if (regime === "nenhum") return [regime, null]; return [regime, v(R, "banco_horas", "limites")[regime]]; }
+  function banco_aplicavel(col, R, AL, data, emitir_alerta) {
+    var LB = limites_banco(R)[1];
+    if (!LB || !col.banco) return false;
+    if (v(R, "banco_horas", "excecao_filho_menor_3_anos") && col.filho3 && !col.concordancia) {
+      if (emitir_alerta && AL) AL.add("violacao", "banco_excecao_parental", "CT art. 208.º-B n.º 13 b)", col.id, data, "colaborador", "Colaborador com filho menor de 3 anos sem concordância escrita: o banco de horas não se lhe aplica.");
+      return false;
+    }
+    if (v(R, "banco_horas", "excecao_filho_3_a_6_anos") && col.filho3_6_decl && !col.concordancia) {
+      if (emitir_alerta && AL) AL.add("violacao", "banco_excecao_parental_3_6", "CT art. 208.º-B n.º 13 c)", col.id, data, "colaborador", "Colaborador com filho dos 3 aos 6 anos e declaração do outro progenitor: o banco de horas não se lhe aplica.");
+      return false;
+    }
+    return true;
+  }
+  function K(c, d) { return c + "|" + d; }
+  function range(a, b) { var o = []; for (var i = a; i < b; i++) o.push(i); return o; }
+
+  function calcular(pacote, ate, desde) {
+    var R = pacote.regras, turnos = pacote.turnos, equipas = {};
+    pacote.equipas.forEach(function (e) { equipas[e.id] = e; });
+    var colabs = pacote.colaboradores.map(norm_colab), cmap = {};
+    colabs.forEach(function (c) { cmap[c.id] = c; });
+    var AL = new Alertas();
+    var dimensao = v(R, "empresa", "dimensao");
+    var lbr = limites_banco(R), regime = lbr[0], LB = lbr[1];
+    var PN_SEM = Math.trunc(v(R, "periodo_normal", "max_semanal_h") * 60), TOL = Math.trunc(v(R, "periodo_normal", "tolerancia_min"));
+    var TOL_PAG = Math.trunc(v(R, "periodo_normal", "tolerancia_pagamento_ao_perfazer_h") * 60);
+    var DESC_D = Math.trunc(v(R, "descansos", "descanso_diario_min_h") * 60), DESC_S = Math.trunc(v(R, "descansos", "descanso_semanal_continuo_min_h") * 60);
+    var MAX_CONS = Math.trunc(v(R, "descansos", "max_dias_consecutivos"));
+    var INT_MIN = Math.trunc(v(R, "descansos", "intervalo_min_h") * 60), INT_MAX = Math.trunc(v(R, "descansos", "intervalo_max_h") * 60);
+    var TC = Math.trunc(v(R, "descansos", "max_trabalho_consecutivo_h") * 60), TC_L = Math.trunc(v(R, "descansos", "max_trabalho_consecutivo_periodo_longo_h") * 60);
+    var TC_LIM = Math.trunc(v(R, "descansos", "periodo_longo_limiar_h") * 60);
+    var DC_DU = Math.trunc(v(R, "descansos", "descanso_compensatorio_dias_uteis"));
+    var SUP_ANO = Math.trunc(v(R, "trabalho_suplementar", "anual_max_h")[dimensao] * 60), SUP_PARC = Math.trunc(v(R, "trabalho_suplementar", "anual_max_tempo_parcial_h") * 60);
+    var SUP_DIA = Math.trunc(v(R, "trabalho_suplementar", "diario_max_dia_util_h") * 60), ACR = v(R, "trabalho_suplementar", "acrescimos_pct");
+    var PRI_MIN = Math.trunc(v(R, "trabalho_suplementar", "primeira_hora_min"));
+    var MESES_RET = Math.trunc(v(R, "trabalho_suplementar", "meses_retribuicao_ano")), SEM_ANO = Math.trunc(v(R, "trabalho_suplementar", "semanas_ano"));
+    var N_INI = hm(v(R, "trabalho_noturno", "inicio")), N_FIM = hm(v(R, "trabalho_noturno", "fim"));
+    var N_TRAB = Math.trunc(v(R, "trabalho_noturno", "trabalhador_noturno_min_h_dia") * 60), N_RISCO = Math.trunc(v(R, "trabalho_noturno", "max_h_24h_atividade_risco") * 60);
+    var MED_MAX = Math.trunc(v(R, "media_semanal", "max_media_h") * 60), MED_MESES = Math.trunc(v(R, "media_semanal", "periodo_referencia_meses"));
+    var MED_INI = dia_idx(v(R, "media_semanal", "inicio_periodo_referencia")), FER_MODO = v(R, "feriados", "trabalho_normal_em_feriado");
+    var FER_ACR_PCT = num(v(R, "feriados", "acrescimo_trabalho_normal_pct")), FERIAS_ILHAS = Math.trunc(v(R, "ferias", "cumulacao_entre_ilhas_anos"));
+    var PRAZO = Math.trunc(v(R, "banco_horas", "prazo_compensacao_meses")), DESTINO = v(R, "banco_horas", "destino_credito_vencido");
+    var AFIX = Math.trunc(v(R, "horario", "afixacao_antecedencia_dias")[dimensao]), RMMG = num(v(R, "empresa", "rmmg_mensal_eur"));
+    var DST_WIN = Math.trunc(v(R, "calculo", "mudanca_hora_janela_min"));
+    var ISENTO_DISP = !!v(R, "isencao_horario", "dispensa_descanso_diario_e_media_48h");
+    var PORTARIA_MOT = !!v(R, "registo_tempos", "trabalhadores_moveis_portaria_7_2022");
+    var ISENTO_EXIGE_ACORDO = !!v(R, "isencao_horario", "exige_acordo_escrito");
+    var ATR_DIA_INI = !!v(R, "calculo", "atribuicao_periodo_ao_dia_de_inicio");
+    var AVISO_PREV_H = num(v(R, "banco_horas", "aviso_previo_comunicacao_h"));
+    var FERIAS_DIAS_MIN = Math.trunc(v(R, "ferias", "dias_uteis_min"));
+    var SUP_DC_MEIO = v(R, "trabalho_suplementar", "diario_max_meio_dia_complementar");
+
+    var datas_reg = pacote.registos.filter(function (r) { return r.data; }).map(function (r) { return dia_idx(r.data); });
+    var datas_esc = pacote.escala.filter(function (r) { return r.data; }).map(function (r) { return dia_idx(r.data); });
+    var todas = datas_reg.concat(datas_esc);
+    if (!todas.length) {
+      pacote.movimentos_banco.forEach(function (m) { if (m.data) todas.push(dia_idx(m.data)); });
+      pacote.ausencias.forEach(function (a) { if (a.inicio) todas.push(dia_idx(a.inicio)); });
+    }
+    if (!todas.length && (desde || ate)) todas = [dia_idx(desde || ate)];
+    if (!todas.length) return { meta: { versao: VERSAO, desde: "", ate: "", escala_ate: "", regime_banco: regime, dimensao: dimensao, feriados: {} }, colaboradores: [], dias: [], movimentos: [], alertas: [], semanas: [] };
+    var D0 = desde ? dia_idx(desde) : Math.min.apply(null, todas);
+    var ATE = ate ? dia_idx(ate) : (datas_reg.length ? Math.max.apply(null, datas_reg) : D0 - 1);
+    var D1 = Math.max.apply(null, [ATE].concat(datas_esc));
+    var FER = {}, y;
+    for (y = +idx_dia(D0 - 7).slice(0, 4); y <= +idx_dia(D1 + 40).slice(0, 4); y++) { var fy = feriados_ano(y, R); for (var kf in fy) FER[kf] = fy[kf]; }
+    var DST = {};
+    for (y = +idx_dia(D0).slice(0, 4); y <= +idx_dia(D1).slice(0, 4); y++) { DST[ultimo_domingo(y, 3)] = 1; DST[ultimo_domingo(y, 10)] = 1; }
+    function isFer(d) { return Object.prototype.hasOwnProperty.call(FER, d); }
+
+    var aus = {};
+    pacote.ausencias.forEach(function (a) {
+      var c = a.colaborador_id;
+      if (!cmap[c]) { AL.add("violacao", "dados_colaborador_desconhecido", "CT art. 202.º", c, g(a, "inicio", ""), "ausencia", "Ausência de colaborador inexistente (" + c + ").", 0, g(a, "id", "")); return; }
+      var i0 = dia_idx(a.inicio), i1 = dia_idx(a.fim || a.inicio), h = g(a, "horas", "");
+      for (var d = i0; d <= i1; d++) { (aus[K(c, d)] = aus[K(c, d)] || []).push([a.tipo, h !== "" ? Math.round(num(h) * 60) : null]); }
+    });
+    var esc = {}, escKeys = [];
+    pacote.escala.forEach(function (e) { var c = e.colaborador_id; if (!cmap[c]) return; var k = K(c, dia_idx(e.data)); if (!esc[k]) escKeys.push([c, dia_idx(e.data)]); esc[k] = e; });
+
+    function plano(c, d) {
+      var col = cmap[c], eq = equipas[col.equipa] || {};
+      var full = (aus[K(c, d)] || []).filter(function (x) { return x[1] === null; }).map(function (x) { return x[0]; });
+      var e = esc[K(c, d)], fer = isFer(d), ds = DIAS_PT[dia_semana(d)];
+      if (full.length) {
+        var t = full[0];
+        if (e !== undefined) {
+          if (e.turno_id === "DO") return { tipo: "descanso_obrigatorio", sub: "", turno: "DO", per: null, esperado: 0 };
+          if (e.turno_id === "DC" || e.turno_id === "LV") return { tipo: "descanso_complementar", sub: "", turno: e.turno_id, per: null, esperado: 0 };
+        } else if (col.descanso.indexOf(ds) >= 0) {
+          return { tipo: col.descanso.indexOf(ds) === 0 ? "descanso_obrigatorio" : "descanso_complementar", sub: "", turno: "", per: null, esperado: 0 };
+        }
+        if (fer && (t === "ferias" || e === undefined || !g(eq, "funciona_feriados", false))) return { tipo: "feriado", sub: t, turno: "", per: null, esperado: 0 };
+        if (t === "ferias") return { tipo: "ferias", sub: t, turno: "", per: null, esperado: 0 };
+        return { tipo: "ausencia", sub: t, turno: "", per: null, esperado: 0 };
+      }
+      if (e !== undefined) {
+        var tid = e.turno_id;
+        if (tid === "DO") return { tipo: "descanso_obrigatorio", sub: "", turno: tid, per: null, esperado: 0 };
+        if (tid === "DC" || tid === "LV") return { tipo: "descanso_complementar", sub: "", turno: tid, per: null, esperado: 0 };
+        var per = (e.inicio && e.fim) ? construir_periodo(d, e.inicio, e.fim, g(e, "pausas", "")) : turno_periodo(turnos, tid, d);
+        if (per === null) return { tipo: "descanso_complementar", sub: "turno_desconhecido", turno: tid, per: null, esperado: 0 };
+        return { tipo: fer ? "feriado_trabalho" : "util", sub: "", turno: tid, per: per, esperado: per.trab };
+      }
+      var ds = DIAS_PT[dia_semana(d)];
+      if (col.descanso.indexOf(ds) >= 0) return { tipo: col.descanso.indexOf(ds) === 0 ? "descanso_obrigatorio" : "descanso_complementar", sub: "", turno: "", per: null, esperado: 0 };
+      if (fer) return { tipo: "feriado", sub: "", turno: "", per: null, esperado: 0 };
+      var p2 = col.turno_base ? turno_periodo(turnos, col.turno_base, d) : null;
+      return { tipo: "util", sub: "", turno: col.turno_base, per: p2, esperado: p2 ? p2.trab : col.base };
+    }
+
+    var reg = {};
+    pacote.registos.forEach(function (r) {
+      var c = g(r, "colaborador_id", "");
+      if (!cmap[c]) { AL.add("violacao", "dados_colaborador_desconhecido", "CT art. 202.º", c, g(r, "data", ""), "registo", "Registo de colaborador inexistente (" + c + ").", 0, g(r, "id", "")); return; }
+      var d = dia_idx(r.data);
+      if (!r.saida) { AL.add("aviso", "registo_aberto", "CT art. 202.º n.º 2", c, d, "registo", "Registo sem hora de saída: o registo tem de indicar início e termo.", 0, g(r, "id", "")); return; }
+      if (d > ATE) return;
+      var p = construir_periodo(d, r.entrada, r.saida, g(r, "pausas", ""));
+      p.motivo = g(r, "motivo_suplementar", ""); p.ref = g(r, "id", "");
+      fatias_periodo(p, ATR_DIA_INI).forEach(function (q) { if (q.data <= ATE) (reg[c] = reg[c] || []).push(q); });
+    });
+    Object.keys(reg).forEach(function (c) { reg[c].sort(function (a, b) { return a.ini - b.ini || a.fim - b.fim; }); });
+
+    var dias_out = [], semanas_out = [], movs = [], res_col = [];
+    function dias_uteis_seguintes(c, d, n) { var out = [], k = d + 1; while (out.length < n && k < d + 40) { var t = plano(c, k).tipo; if (t === "util" || t === "ausencia") out.push(k); k++; } return out; }
+    function tem_desc_comp(c, ds) { return ds.some(function (k) { return (aus[K(c, k)] || []).some(function (x) { return x[0] === "descanso_compensatorio"; }); }); }
+    function somaSobre(a, b, ps) { var s = 0; ps.forEach(function (x) { s += sobrepor(a, b, x[0], x[1]); }); return s; }
+
+    function verificar_periodos(c, pers, origem) {
+      var col = cmap[c];
+      pers.forEach(function (p) {
+        var validos = p.pausas.filter(function (x) { return x[1] - x[0] >= INT_MIN; });
+        var limite = p.trab > TC_LIM ? TC_L : TC, cur = p.ini, maior = 0;
+        validos.forEach(function (x) { maior = Math.max(maior, x[0] - cur - somaSobre(cur, x[0], p.pausas)); cur = x[1]; });
+        maior = Math.max(maior, p.fim - cur - somaSobre(cur, p.fim, p.pausas));
+        if (maior > limite) AL.add("violacao", "intervalo_descanso", "CT art. 213.º n.º 1", c, p.data, origem, fmt_min(maior) + " de trabalho seguido sem intervalo de 1 a 2 h (máximo " + fmt_min(limite) + ").", maior);
+        p.pausas.forEach(function (x) { if (x[1] - x[0] > INT_MAX) AL.add("aviso", "intervalo_superior_2h", "CT art. 213.º n.º 1", c, p.data, origem, "Intervalo de " + fmt_min(x[1] - x[0]) + ", acima de 2 h (só por IRCT).", x[1] - x[0]); });
+        var di = fdiv(p.ini, 1440);
+        if ((DST[di + 1] || DST[di]) && p.fim > (di + 1) * 1440 - 1440 && Object.keys(DST).some(function (k) { k = +k; return sobrepor(p.ini, p.fim, k * 1440, k * 1440 + DST_WIN) > 0; }))
+          AL.add("aviso", "mudanca_hora", "fuso Atlantic/Azores", c, p.data, origem, "Período atravessa a mudança de hora: confirme a duração real (+/- 1 h).");
+      });
+      for (var i = 0; i + 1 < pers.length; i++) {
+        var a = pers[i], b = pers[i + 1];
+        if (b.ini < a.fim) { AL.add("violacao", "registo_sobreposto", "CT art. 202.º n.º 2", c, b.data, origem, "Dois períodos de trabalho sobrepostos.", a.fim - b.ini); continue; }
+        var gap = b.ini - a.fim;
+        if (gap < DESC_D && !(col.isento && ISENTO_DISP)) {
+          AL.add("violacao", "descanso_diario", "CT art. 214.º n.º 1", c, b.data, origem, "Só " + fmt_min(gap) + " de descanso entre dois períodos de trabalho (mínimo " + fmt_min(DESC_D) + ").", gap);
+          if (origem === "registo" && ((a.sup || 0) > 0 || (b.sup || 0) > 0)) {
+            var ds = dias_uteis_seguintes(c, b.data, DC_DU);
+            if (!tem_desc_comp(c, ds)) {
+              var nivel = (ds.length && ds[ds.length - 1] <= ATE) ? "violacao" : "aviso";
+              AL.add(nivel, "descanso_compensatorio_diario", "CT art. 229.º n.º 3", c, b.data, origem, "Suplementar impediu o descanso diário: tem direito a " + fmt_min(DESC_D - gap) + " de descanso compensatório num dos " + DC_DU + " dias úteis seguintes.", DESC_D - gap);
+            }
+          }
+        }
+      }
+    }
+
+    function verificar_semanas(c, pers, d_ini, d_fim, origem, laboracao) {
+      var trabalhou = {};
+      pers.forEach(function (p) { p.segs.forEach(function (s) { for (var k = fdiv(s[0], 1440); k <= fdiv(s[1] - 1, 1440); k++) trabalhou[k] = 1; }); });
+      var w = segunda(d_ini); if (w < d_ini) w += 7;
+      while (w + 6 <= d_fim) {
+        var livres = range(w, w + 7).filter(function (k) { return !trabalhou[k]; });
+        if (!livres.length) AL.add("violacao", "descanso_semanal", "CT art. 232.º n.º 1", c, w + 6, origem, "Semana de " + idx_dia(w) + " sem nenhum dia de descanso.");
+        else {
+          var melhor = 0;
+          livres.forEach(function (k) {
+            var antes = -1e9, depois = 1e9;
+            pers.forEach(function (p) { if (p.fim <= k * 1440 && p.fim > antes) antes = p.fim; if (p.ini >= (k + 1) * 1440 && p.ini < depois) depois = p.ini; });
+            melhor = Math.max(melhor, depois - antes);
+          });
+          if (melhor < DESC_S) AL.add("violacao", "descanso_semanal_35h", "CT art. 233.º n.º 1", c, w + 6, origem, "O maior descanso da semana de " + idx_dia(w) + " foi " + fmt_min(melhor) + " (mínimo " + fmt_min(DESC_S) + " seguidas).", melhor);
+        }
+        w += 7;
+      }
+      var run = 0;
+      for (var k = d_ini; k <= d_fim; k++) {
+        run = trabalhou[k] ? run + 1 : 0;
+        if (run === MAX_CONS + 1) AL.add(laboracao ? "violacao" : "aviso", "dias_consecutivos", "CT art. 221.º n.º 5", c, k, origem, run + " dias seguidos de trabalho sem descanso.", run);
+      }
+    }
+
+    // ---- validação da escala
+    var cobertura = {};
+    colabs.forEach(function (cx) {
+      var c = cx.id, col = cmap[c], eq = equipas[col.equipa] || {}, banco_esc = banco_aplicavel(col, R);
+      var dias_c = escKeys.filter(function (x) { return x[0] === c; }).map(function (x) { return x[1]; }).sort(function (a, b) { return a - b; });
+      if (!dias_c.length) return;
+      var pers = [], prev = null, semana_normal = {}, semOrd = [];
+      for (var d = dias_c[0]; d <= dias_c[dias_c.length - 1]; d++) {
+        var p = plano(c, d), e = esc[K(c, d)];
+        if (p.per !== null) {
+          pers.push(p.per);
+          var ck = col.equipa + "|" + d + "|" + p.turno; cobertura[ck] = (cobertura[ck] || 0) + 1;
+          var lim_d = col.base + (banco_esc ? LB.acrescimo_diario_h * 60 : 0);
+        if (p.esperado > lim_d && !isencao_sem_teto(col, R)) AL.add("violacao", "limite_diario", "CT art. 203.º n.º 1" + (banco_esc ? " e art. 208.º-B n.º 3" : ""), c, d, "escala", "Turno previsto de " + fmt_min(p.esperado) + " acima do limite diário de " + fmt_min(lim_d) + ".", p.esperado);
+          var sw = segunda(d); if (!(sw in semana_normal)) { semana_normal[sw] = 0; semOrd.push(sw); } semana_normal[sw] += p.esperado;
+          if (prev !== null && prev.per !== null && prev.turno && p.turno && prev.turno !== p.turno && g(eq, "turnos_rotativos", true))
+            AL.add("violacao", "mudanca_turno", "CT art. 221.º n.º 4", c, d, "escala", "Mudança de turno (" + prev.turno + " para " + p.turno + ") sem dia de descanso pelo meio.");
+          if (e !== undefined && e.afixada_em) { if (d - dia_idx(e.afixada_em) < AFIX) AL.add("aviso", "afixacao_horario", "CT art. 217.º n.º 2", c, segunda(d), "escala", "Escala afixada a " + e.afixada_em + ": menos de " + AFIX + " dias antes do turno."); }
+        }
+        prev = p;
+      }
+      semOrd.forEach(function (w) {
+        var m = semana_normal[w];
+        var lim_s = banco_esc ? LB.semanal_max_h * 60 : Math.min(PN_SEM, Math.max(col.sem, 0) || PN_SEM);
+        if (m > lim_s && !isencao_sem_teto(col, R)) AL.add("violacao", "limite_semanal", "CT art. 203.º n.º 1" + (banco_esc ? " e art. 208.º-B n.º 3" : ""), c, w, "escala", "Escala de " + idx_dia(w) + " soma " + fmt_min(m) + " (máximo " + fmt_min(lim_s) + ").", m);
+      });
+      verificar_periodos(c, pers, "escala");
+      verificar_semanas(c, pers, dias_c[0], dias_c[dias_c.length - 1], "escala", g(eq, "laboracao_continua", false));
+    });
+    pacote.equipas.forEach(function (eq) {
+      var cob = eq.cobertura || {};
+      Object.keys(cob).forEach(function (tid) {
+        var req = cob[tid], seen = {}, ds = [];
+        escKeys.forEach(function (x) { if ((cmap[x[0]] || {}).equipa === eq.id && !seen[x[1]]) { seen[x[1]] = 1; ds.push(x[1]); } });
+        ds.sort(function (a, b) { return a - b; });
+        ds.forEach(function (d) {
+          if (isFer(d) && !g(eq, "funciona_feriados", false)) return;
+          var n = req[dia_semana(d)], tem = cobertura[eq.id + "|" + d + "|" + tid] || 0;
+          if (tem < n) AL.add("aviso", "cobertura_em_falta", "regra interna", eq.id, d, "escala", "Equipa " + g(eq, "nome", eq.id) + ", turno " + tid + ": " + tem + " de " + n + " pessoas.", n - tem, tid);
+        });
+      });
+    });
+
+    // ---- cálculo real
+    colabs.forEach(function (col) {
+      var c = col.id, eq = equipas[col.equipa] || {}, pers = reg[c] || [], por_dia = {};
+      pers.forEach(function (p) { (por_dia[p.data] = por_dia[p.data] || []).push(p); });
+      var banco = banco_aplicavel(col, R, AL, D0, true);
+      if (PORTARIA_MOT && String(col.funcao || "").toLowerCase().indexOf("motorista") >= 0) {
+        AL.add("info", "motorista_portaria_7_2022", "Portaria n.º 7/2022; DL 237/2007", c, D0, "colaborador", "Função motorista: A CONFIRMAR se o colaborador está sujeito ao registo específico de trabalhadores móveis (Portaria n.º 7/2022).");
+      }
+      if (col.vh > 0 && col.sem > 0 && PN_SEM > 0) {
+        var rmmg_prop = RMMG * (col.sem / PN_SEM);
+        var minimo = (rmmg_prop * MESES_RET) / (SEM_ANO * (col.sem / 60.0));
+        if (col.vh + 1e-9 < r2(minimo)) {
+          var art_vh = col.tipo_contrato === "tempo_parcial" ? "CT art. 271.º, art. 154.º n.º 3; DLR 8/2002/A art. 3.º" : "CT art. 271.º; DLR 8/2002/A art. 3.º";
+          AL.add("aviso", "valor_hora_abaixo_minimo", art_vh, c, D0, "colaborador", "Valor hora " + f2(col.vh) + " € abaixo do mínimo regional " + f2(minimo) + " €.");
+        }
+      }
+      if (col.isento && ISENTO_EXIGE_ACORDO && !col.isencao_acordo) {
+        AL.add("violacao", "isencao_sem_acordo", "CT art. 218.º n.º 1", c, D0, "colaborador", "Isenção de horário sem acordo escrito: a isenção só é admissível com acordo escrito.");
+      }
+      var acr_d = banco ? LB.acrescimo_diario_h * 60 : 0, wcap = banco ? LB.semanal_max_h * 60 : PN_SEM, acap = banco ? LB.anual_max_h * 60 : 0;
+      var sup_lim = col.tipo_contrato === "tempo_parcial" ? SUP_PARC : SUP_ANO;
+      if (col.tipo_contrato === "tempo_parcial") sup_lim = Math.max(SUP_PARC, Math.trunc(SUP_ANO * col.sem / PN_SEM));
+      var sem_norm = {}, ano_cred = {}, ano_sup = {}, ano_sup_lim = {}, ano_tol = {};
+      var tot = { trab: 0, normal: 0, sup: 0, sup_util: 0, sup_desc: 0, noct: 0, credito: 0, debito: 0, tol: 0, falta: 0, desc_feriado: 0, fer_normal: 0, fer_acr_milli: 0, acr_milli: 0, dias_trab: 0, noturno_dias: 0 };
+      var dias_col = [];
+      for (var d = D0; d <= ATE; d++) {
+        var p = plano(c, d), ps = por_dia[d] || [];
+        var trab = 0, noct = 0, mset = {};
+        ps.forEach(function (x) { trab += x.trab; noct += minutos_noturnos(x.segs, N_INI, N_FIM); if (x.motivo) mset[x.motivo] = 1; });
+        var motivo = Object.keys(mset).sort().join(","), fmaior = motivo.indexOf("forca_maior") >= 0;
+        var parc = (aus[K(c, d)] || []).filter(function (x) { return x[1] !== null; }), just = 0;
+        parc.forEach(function (x) { just += x[1]; });
+        var r = { c: c, data: idx_dia(d), tipo: p.tipo, sub: p.sub, turno: p.turno, esperado: p.esperado, trab: trab, normal: 0, sup: 0, sup_tipo: "", noct: noct, credito: 0, debito: 0, tol: 0, falta: 0, desc_feriado: 0, fer_acr_milli: 0, acr_milli: 0 };
+        var fer_normal = 0;
+        parc.forEach(function (x) { if (x[0] === "compensacao_banco") r.debito += x[1]; });
+        if (p.tipo === "ausencia" && p.sub === "compensacao_banco") r.debito += col.base;
+        var yy = idx_dia(d).slice(0, 4), over;
+        if (p.tipo === "util" || p.tipo === "feriado_trabalho") {
+          var w = segunda(d);
+          if (isencao_sem_teto(col, R)) {
+            r.normal = trab;
+            r.falta = Math.max(0, p.esperado - trab - just);
+            sem_norm[w] = (sem_norm[w] || 0) + r.normal;
+          } else {
+          var cap = Math.min(p.esperado, col.base + acr_d);
+          if (trab > cap) { var exc = trab - cap; if (exc <= TOL && !motivo) r.tol = exc; else r.sup = exc; r.normal = cap; } else r.normal = trab;
+          r.falta = Math.max(0, p.esperado - trab - just);
+          if ((sem_norm[w] || 0) + r.normal > wcap) {
+            over = (sem_norm[w] || 0) + r.normal - wcap; r.normal -= over; r.sup += over;
+            AL.add("violacao", "limite_semanal", "CT art. 203.º n.º 1" + (banco ? " e art. 208.º-B n.º 3" : ""), c, d, "registo", "Trabalho normal da semana acima de " + fmt_min(wcap) + ": " + fmt_min(over) + " passam a suplementar.", over);
+          }
+          sem_norm[w] = (sem_norm[w] || 0) + r.normal;
+          if (banco) {
+            r.credito = Math.max(0, r.normal - col.base);
+            if ((ano_cred[yy] || 0) + r.credito > acap) {
+              over = (ano_cred[yy] || 0) + r.credito - acap; r.credito -= over; r.normal -= over; r.sup += over;
+              AL.add("violacao", "banco_limite_anual", "CT art. 208.º-B n.º 3", c, d, "registo", "Limite anual do banco (" + fmt_min(acap) + ") atingido: " + fmt_min(over) + " passam a suplementar.", over);
+            }
+            ano_cred[yy] = (ano_cred[yy] || 0) + r.credito;
+          }
+          }
+          r.sup_tipo = p.tipo === "feriado_trabalho" ? "feriado" : "util";
+          if (p.tipo === "feriado_trabalho") { fer_normal = r.normal; if (FER_MODO === "descanso") r.desc_feriado = fdiv(r.normal, 2); else if (FER_MODO === "acrescimo") r.fer_acr_milli = Math.round(r.normal * FER_ACR_PCT * 10); }
+          if (r.falta > 0) AL.add("aviso", "falta", "CT art. 248.º", c, d, "registo", "Ausência não justificada de " + fmt_min(r.falta) + " face à escala.", r.falta);
+        } else {
+          r.sup = trab;
+          r.sup_tipo = p.tipo.indexOf("descanso") === 0 ? "descanso" : (p.tipo === "feriado" ? "feriado" : "util");
+          if (trab > 0 && (p.tipo === "ferias" || p.tipo === "ausencia")) AL.add("violacao", "trabalho_em_ausencia", "CT art. 202.º", c, d, "registo", "Trabalho registado num dia marcado como " + (p.sub || p.tipo) + ".", trab);
+          if (trab > 0 && p.tipo === "descanso_obrigatorio") {
+            var ds2 = dias_uteis_seguintes(c, d, DC_DU);
+            if (!tem_desc_comp(c, ds2)) {
+              var niv = (ds2.length && ds2[ds2.length - 1] <= ATE) ? "violacao" : "aviso";
+              AL.add(niv, "descanso_compensatorio_semanal", "CT art. 229.º n.º 4", c, d, "registo", "Trabalhou no dia de descanso obrigatório: tem direito a 1 dia de descanso compensatório num dos " + DC_DU + " dias úteis seguintes.", trab);
+            }
+          }
+        }
+        if (r.sup > 0 && !fmaior) {
+          if (r.sup_tipo === "util" && r.sup > SUP_DIA) AL.add("violacao", "suplementar_diario", "CT art. 228.º n.º 1 d)", c, d, "registo", fmt_min(r.sup) + " de suplementar num dia útil (máximo " + fmt_min(SUP_DIA) + ").", r.sup);
+          if (r.sup_tipo === "descanso" && p.tipo === "descanso_complementar") {
+            var lim_dc = SUP_DC_MEIO === "metade_periodo_normal_diario" ? Math.floor(col.base / 2) : col.base;
+            if (r.sup > lim_dc) AL.add("violacao", "suplementar_meio_dia_complementar", "CT art. 228.º n.º 1 f)", c, d, "registo", fmt_min(r.sup) + " de suplementar em meio dia de descanso complementar (máximo " + fmt_min(lim_dc) + ").", r.sup);
+          } else if ((r.sup_tipo === "descanso" || r.sup_tipo === "feriado") && r.sup > col.base) AL.add("violacao", "suplementar_dia_descanso", "CT art. 228.º n.º 1 e)", c, d, "registo", fmt_min(r.sup) + " de suplementar em dia de descanso ou feriado (máximo " + fmt_min(col.base) + ").", r.sup);
+          var antes = ano_sup_lim[yy] || 0; ano_sup_lim[yy] = antes + r.sup;
+          if (antes <= sup_lim && sup_lim < ano_sup_lim[yy])
+            AL.add("violacao", "suplementar_anual", "CT art. 228.º n.º 1 " + (col.tipo_contrato === "tempo_parcial" ? "c)" : ((dimensao === "micro" || dimensao === "pequena") ? "a)" : "b)")), c, d, "registo", "Ultrapassado o limite anual de " + fmt_min(sup_lim) + " de trabalho suplementar.", ano_sup_lim[yy]);
+        }
+        var cum = ano_sup[yy] || 0, milli = 0;
+        for (var m = 0; m < r.sup; m++) {
+          var t2 = cum + m >= ACR.ate_horas_anuais * 60, pct;
+          if (r.sup_tipo === "util") pct = m < PRI_MIN ? (t2 ? ACR.acima_util_primeira : ACR.util_primeira) : (t2 ? ACR.acima_util_seguintes : ACR.util_seguintes);
+          else pct = t2 ? ACR.acima_descanso_feriado : ACR.descanso_feriado;
+          milli += Math.round(pct * 10);
+        }
+        r.acr_milli = milli; ano_sup[yy] = cum + r.sup;
+        if (r.tol) {
+          var antesT = ano_tol[yy] || 0; ano_tol[yy] = antesT + r.tol;
+          if (fdiv(antesT, TOL_PAG) < fdiv(ano_tol[yy], TOL_PAG)) AL.add("info", "tolerancia_4h", "CT art. 203.º n.º 3", c, d, "registo", "Tolerâncias de 15 min somam " + fmt_min(ano_tol[yy]) + " no ano: pagar o acréscimo.", ano_tol[yy]);
+        }
+        if (Math.max(0, noct - r.sup) >= N_TRAB) tot.noturno_dias += 1;
+        if (col.risco && noct > 0 && trab > N_RISCO) AL.add("violacao", "noturno_risco_8h", "CT art. 224.º n.º 4", c, d, "registo", "Trabalhador noturno em atividade de risco com " + fmt_min(trab) + " num dia com trabalho noturno (máximo " + fmt_min(N_RISCO) + ").", trab);
+        ps.forEach(function (x) { x.sup = r.sup; });
+        ["trab", "normal", "sup", "noct", "credito", "debito", "tol", "falta", "desc_feriado", "fer_acr_milli", "acr_milli"].forEach(function (k) { tot[k] += r[k]; });
+        tot.fer_normal += fer_normal;
+        if (r.sup_tipo === "util") tot.sup_util += r.sup; else if (r.sup) tot.sup_desc += r.sup;
+        if (trab > 0) tot.dias_trab += 1;
+        dias_col.push(r);
+        if (r.credito > 0) movs.push({ colaborador_id: c, data: idx_dia(d), tipo: "credito", min: r.credito, origem: "automatico", nota: "Acréscimo previsto na escala" });
+        if (r.debito > 0) movs.push({ colaborador_id: c, data: idx_dia(d), tipo: "compensacao", min: -r.debito, origem: "automatico", nota: "Redução do tempo de trabalho (compensação)" });
+      }
+      verificar_periodos(c, pers, "registo");
+      if (pers.length) verificar_semanas(c, pers, D0, ATE, "registo", g(eq, "laboracao_continua", false));
+      var ini_ref = MED_INI;
+      while (add_meses(ini_ref, MED_MESES) <= ATE) ini_ref = add_meses(ini_ref, MED_MESES);
+      var fim_ref = add_meses(ini_ref, MED_MESES) - 1, a0 = Math.max(ini_ref, D0), total = 0, ferias_d = 0, fer_num = 0;
+      var por_sem_med = {}, sem_med_ord = [];
+      dias_col.forEach(function (r) {
+        var k = dia_idx(r.data); if (k < a0) return;
+        var wm = segunda(k);
+        if (!por_sem_med[wm]) { por_sem_med[wm] = []; sem_med_ord.push(wm); }
+        por_sem_med[wm].push(r);
+      });
+      sem_med_ord.sort(function (a, b) { return a - b; }).forEach(function (wm) {
+        var rs = por_sem_med[wm], trab_w = 0, norm_w = 0, baixa_d = 0, fw = 0;
+        rs.forEach(function (x) {
+          trab_w += x.trab; norm_w += x.normal;
+          if (x.tipo === "ausencia" && (x.sub === "baixa" || x.sub === "licenca_parental")) baixa_d += 1;
+          if (x.tipo === "ferias") fw += 1;
+        });
+        var baixa_cred = baixa_d * col.base;
+        if (col.sem > 0) baixa_cred = Math.min(baixa_cred, Math.max(0, col.sem - norm_w));
+        total += trab_w + baixa_cred;
+        ferias_d += fw;
+        if (col.sem > 0 && col.base > 0) fer_num += Math.min(rs.length * col.sem, fw * 7 * col.base);
+        else fer_num += fw;
+      });
+      var media;
+      if (col.sem > 0 && col.base > 0) {
+        var ndias_num = Math.max(0, (ATE - a0 + 1) * col.sem - fer_num);
+        media = ndias_num > 0 ? Math.trunc((total * 7 * col.sem) / ndias_num) : 0;
+      } else {
+        var ndias = (ATE - a0 + 1) - ferias_d;
+        media = ndias > 0 ? Math.trunc(total * 7 / ndias) : 0;
+      }
+      if (media > MED_MAX && !(col.isento && ISENTO_DISP)) AL.add("aviso", "media_48h", "CT art. 211.º n.º 1", c, ATE, "registo", "Média de " + fmt_min(media) + " por semana desde " + idx_dia(a0) + " (máximo " + fmt_min(MED_MAX) + " em média até " + idx_dia(fim_ref) + ").", media);
+      aplicar_ferias_ilhas(AL, col, aus, D0, ATE, FERIAS_ILHAS, FERIAS_DIAS_MIN, FER);
+      if (col.isento) alerta_retribuicao_isencao(AL, col, R, dias_col, ATE, ACR);
+      var ya = idx_dia(ATE).slice(0, 4);
+      tot.media_semanal = media; tot.sup_ano = ano_sup[ya] || 0; tot.sup_ano_limite = sup_lim; tot.banco_ano = ano_cred[ya] || 0; tot.banco_ano_limite = acap; tot.tol_ano = ano_tol[ya] || 0;
+      dias_out = dias_out.concat(dias_col);
+      res_col.push({ id: c, nome: col.nome, equipa: col.equipa, banco_ativo: banco, totais: tot });
+      var ws = {}, wl = [];
+      dias_col.forEach(function (r) { var w = segunda(dia_idx(r.data)); if (!ws[w]) { ws[w] = { c: c, semana: idx_dia(w), trab: 0, normal: 0, sup: 0 }; wl.push(w); } ws[w].trab += r.trab; ws[w].normal += r.normal; ws[w].sup += r.sup; });
+      wl.sort(function (a, b) { return a - b; }).forEach(function (w) { semanas_out.push(ws[w]); });
+    });
+
+    // ---- banco de horas
+    pacote.movimentos_banco.forEach(function (m) {
+      var c = m.colaborador_id; if (!cmap[c]) return;
+      var mins = Math.round(num(m.horas) * 60);
+      if (m.tipo === "credito") mins = Math.abs(mins); else if (["compensacao", "ferias", "pagamento"].indexOf(m.tipo) >= 0) mins = -Math.abs(mins);
+      movs.push({ colaborador_id: c, data: m.data, tipo: m.tipo, min: mins, origem: "manual", nota: g(m, "nota", ""), id: g(m, "id", "") });
+    });
+    function movKey(x) { return [x.colaborador_id, x.data, x.min > 0 ? 0 : 1, x.id || ""]; }
+    movs.sort(function (a, b) { return cmp(movKey(a), movKey(b)); });
+    var gerados = [];
+    res_col.forEach(function (rc) {
+      var c = rc.id, lotes = [], divida = 0, acum = { credito: 0, debito: 0, pago: 0, vencido: 0 };
+      function expirar(D) {
+        lotes.forEach(function (L) {
+          if (L.venc < D && L.rest > 0 && !L.vencido) {
+            L.vencido = true; acum.vencido += L.rest;
+            if (DESTINO === "pagamento") {
+              gerados.push({ colaborador_id: c, data: idx_dia(L.venc), tipo: "pagamento_vencido", min: -L.rest, origem: "automatico", nota: "Crédito de " + L.data + " não compensado no prazo: pagamento devido" });
+              AL.add("info", "credito_vencido_pago", "CT art. 208.º n.º 4 a) iii)", c, L.venc, "banco", fmt_min(L.rest) + " de crédito não gozado no prazo: pagamento em dinheiro devido.", L.rest, L.data);
+              acum.pago += L.rest; L.rest = 0;
+            } else AL.add("aviso", "credito_vencido", "CT art. 208.º n.º 4 c)", c, L.venc, "banco", fmt_min(L.rest) + " de crédito passaram o prazo de compensação sem destino.", L.rest, L.data);
+          }
+        });
+      }
+      movs.filter(function (x) { return x.colaborador_id === c; }).forEach(function (m) {
+        var D = dia_idx(m.data); expirar(D);
+        var q = m.min;
+        if (q > 0) { acum.credito += q; var x = Math.min(q, divida); divida -= x; q -= x; if (q > 0) lotes.push({ data: m.data, venc: add_meses(D, PRAZO), rest: q, vencido: false }); }
+        else if (q < 0) {
+          q = -q; if (m.tipo === "pagamento") acum.pago += q; else acum.debito += q;
+          for (var i = 0; i < lotes.length; i++) { if (q === 0) break; var y2 = Math.min(lotes[i].rest, q); lotes[i].rest -= y2; q -= y2; }
+          divida += q;
+        }
+      });
+      expirar(ATE + 1);
+      var saldo = -divida, a_vencer = 0, prox = 0, proxs = [];
+      lotes.forEach(function (L) { saldo += L.rest; if (!L.vencido && ATE < L.venc && L.venc <= ATE + 30) a_vencer += L.rest; if (L.rest > 0 && !L.vencido) proxs.push(L.venc); });
+      if (proxs.length) prox = Math.min.apply(null, proxs);
+      if (divida > 0) AL.add("aviso", "saldo_negativo", "CT art. 208.º n.º 4 (regular no IRCT/projeto)", c, ATE, "banco", "Saldo negativo de " + fmt_min(divida) + ": definir no regulamento o que acontece no fim do período.", divida);
+      if (a_vencer > 0) AL.add("aviso", "credito_a_vencer", "CT art. 208.º n.º 4 c)", c, prox, "banco", fmt_min(a_vencer) + " de crédito vencem nos próximos 30 dias: marcar a compensação.", a_vencer);
+      rc.banco = { credito: acum.credito, debito: acum.debito, pago: acum.pago, vencido: acum.vencido, saldo: saldo, divida: divida, a_vencer_30: a_vencer, proximo_vencimento: prox ? idx_dia(prox) : "" };
+    });
+    movs = movs.concat(gerados);
+    movs.sort(function (a, b) { return cmp(movKey(a).concat([a.tipo]), movKey(b).concat([b.tipo])); });
+    aviso_previo_compensacao(AL, pacote, AVISO_PREV_H);
+    var alertas = AL.lista.slice().sort(function (a, b) { return cmp([a.data, a.colaborador_id, a.regra, a.origem, a.id], [b.data, b.colaborador_id, b.regra, b.origem, b.id]); });
+    var fer_meta = {};
+    Object.keys(FER).map(Number).sort(function (a, b) { return a - b; }).forEach(function (k) { if (D0 - 7 <= k && k <= D1 + 40) fer_meta[idx_dia(k)] = FER[k]; });
+    return { meta: { versao: VERSAO, desde: idx_dia(D0), ate: idx_dia(ATE), escala_ate: idx_dia(D1), regime_banco: regime, dimensao: dimensao, feriados: fer_meta },
+      colaboradores: res_col, dias: dias_out, semanas: semanas_out, movimentos: movs, alertas: alertas };
+  }
+
+  function aplicar_ferias_ilhas(AL, col, aus, D0, ATE, anos, dias_min, FER) {
+    if (!anos || !dias_min) return;
+    var por_ano = {}, c = col.id;
+    Object.keys(aus).forEach(function (k) {
+      var p = k.split("|"), cc = p[0], d = +p[1];
+      if (cc !== c || d < D0 || d > ATE) return;
+      if (!(aus[k] || []).some(function (x) { return x[0] === "ferias" && x[1] === null; })) return;
+      if (dia_semana(d) >= 5 || (d in FER)) return;
+      var y = idx_dia(d).slice(0, 4);
+      por_ano[y] = (por_ano[y] || 0) + 1;
+    });
+    var teto = dias_min * anos;
+    Object.keys(por_ano).forEach(function (y) {
+      var n = por_ano[y];
+      if (n > teto) AL.add("aviso", "ferias_acumuladas_acima_limite", "DLR 19/2006/A art. 8.º", c, y + "-12-31", "ausencia", n + " dias úteis de férias em " + y + ": acima do máximo de " + teto + " dias (acumulação de " + anos + " anos entre ilhas).", n);
+      else if (n > dias_min) AL.add("info", "ferias_acumuladas_entre_ilhas", "DLR 19/2006/A art. 8.º", c, y + "-12-31", "ausencia", n + " dias úteis de férias em " + y + ": a acumulação até " + anos + " anos só é válida se gozadas noutra ilha, na Madeira, no continente ou no estrangeiro.", n);
+    });
+  }
+  function alerta_retribuicao_isencao(AL, col, regras, dias_col, ATE, ACR) {
+    if (col.isencao_renuncia) return;
+    var mod = modalidade_isencao(col, regras), ret = v(regras, "isencao_horario", "retribuicao_especifica_min_h") || {}, mins, base_txt;
+    if (mod === "sem_limite" || mod === "alargamento_determinado") {
+      var dias = 0; dias_col.forEach(function (r) { if ((r.tipo === "util" || r.tipo === "feriado_trabalho") && r.trab > 0) dias += 1; });
+      mins = Math.round(num(ret.sem_limite_ou_alargamento_dia, 1) * 60 * dias);
+      base_txt = fmt_min(mins) + " de retribuição específica (1 h de suplementar/dia × " + dias + " dias, art. 265.º n.º 1).";
+    } else {
+      var semanas = {}; dias_col.forEach(function (r) { if (r.trab > 0) semanas[segunda(dia_idx(r.data))] = 1; });
+      var nsem = Object.keys(semanas).length;
+      mins = Math.round(num(ret.observancia_pnt_semana, 2) * 60 * nsem);
+      base_txt = fmt_min(mins) + " de retribuição específica (2 h/semana × " + nsem + " semanas, art. 265.º n.º 1).";
+    }
+    if (mins <= 0) return;
+    var vh = col.vh || 0, pct = num((ACR || {}).util_primeira, 25);
+    var eur = vh ? r2((mins / 60.0) * vh * (1 + pct / 100.0)) : null;
+    var msg = eur == null ? base_txt : (base_txt + " Estimativa: " + f2(eur) + " €.");
+    AL.add("info", "retribuicao_isencao_horario", "CT art. 265.º n.º 1", col.id, ATE, "colaborador", msg, mins);
+  }
+  function parse_ts(ts) {
+    var t = String(ts || "").trim();
+    if (!t) return null;
+    var d = new Date(t.replace(" ", "T"));
+    return isNaN(d.getTime()) ? null : d;
+  }
+  function aviso_previo_compensacao(AL, pacote, aviso_h) {
+    if (!aviso_h) return;
+    var need = Math.round(aviso_h * 60);
+    function antecip(ts, dia) {
+      var comunic = parse_ts(ts); if (!comunic || !dia) return null;
+      var inicio = new Date(dia + "T00:00:00");
+      return Math.floor((inicio.getTime() - comunic.getTime()) / 60000);
+    }
+    (pacote.ausencias || []).forEach(function (a) {
+      if (a.tipo !== "compensacao_banco") return;
+      var ant = antecip(a.updated_at || a.comunicado_em || a.registado_em, a.inicio);
+      if (ant == null || ant >= need) return;
+      AL.add("aviso", "aviso_previo_compensacao", "CT art. 208.º n.º 4 b)", a.colaborador_id || "", a.inicio, "ausencia", "Compensação do banco comunicada com " + fmt_min(Math.max(0, ant)) + " de antecedência (mínimo " + fmt_min(need) + ", valor de exemplo do IRCT/projeto).", 0, a.id || "");
+    });
+    (pacote.movimentos_banco || []).forEach(function (m) {
+      if (m.tipo !== "compensacao") return;
+      var ant = antecip(m.updated_at || m.comunicado_em, m.data);
+      if (ant == null || ant >= need) return;
+      AL.add("aviso", "aviso_previo_compensacao", "CT art. 208.º n.º 4 b)", m.colaborador_id || "", m.data, "banco", "Movimento de compensação comunicado com " + fmt_min(Math.max(0, ant)) + " de antecedência (mínimo " + fmt_min(need) + ").", 0, m.id || "");
+    });
+  }
+
+  function propor_escala(pacote, semana, equipa, afixada_em) {
+    var R = pacote.regras, turnos = pacote.turnos, w0 = segunda(dia_idx(semana));
+    var colabs = pacote.colaboradores.map(norm_colab).filter(function (c) { return c.ativo; });
+    var FER = {}, ys = {}; ys[+idx_dia(w0).slice(0, 4)] = 1; ys[+idx_dia(w0 + 6).slice(0, 4)] = 1;
+    Object.keys(ys).forEach(function (y) { var f = feriados_ano(+y, R); for (var k in f) FER[k] = f[k]; });
+    function isFer(d) { return Object.prototype.hasOwnProperty.call(FER, d); }
+    var DESC_D = Math.trunc(v(R, "descansos", "descanso_diario_min_h") * 60), MAX_CONS = Math.trunc(v(R, "descansos", "max_dias_consecutivos")), LB = limites_banco(R)[1];
+    var esc_ant = {};
+    pacote.escala.forEach(function (e) { esc_ant[K(e.colaborador_id, dia_idx(e.data))] = e; });
+    var aus_full = {};
+    pacote.ausencias.forEach(function (a) { if (g(a, "horas", "") === "") for (var d = dia_idx(a.inicio); d <= dia_idx(a.fim || a.inicio); d++) aus_full[K(a.colaborador_id, d)] = 1; });
+    var linhas = [], faltas = [], REST = ["DO", "DC", "LV"];
+    pacote.equipas.forEach(function (eq) {
+      if ((equipa && eq.id !== equipa) || !eq.cobertura || !Object.keys(eq.cobertura).length) return;
+      var fecha = !g(eq, "funciona_feriados", false);
+      var membros = colabs.filter(function (c) { return c.equipa === eq.id; }), estado = {};
+      membros.forEach(function (c) {
+        var ult_fim = null, ult_turno = "", run = 0, k = w0 - 1, e = esc_ant[K(c.id, k)];
+        if (e && REST.indexOf(e.turno_id) < 0) {
+          ult_turno = e.turno_id;
+          var p = !e.inicio ? turno_periodo(turnos, ult_turno, k) : construir_periodo(k, e.inicio, e.fim, g(e, "pausas", ""));
+          ult_fim = p ? p.fim : null;
+          while (k >= w0 - 7) { var e2 = esc_ant[K(c.id, k)]; if (e2 && REST.indexOf(e2.turno_id) < 0) { run++; k--; } else break; }
+        }
+        var ndias_ind = 0;
+        for (var d = w0; d < w0 + 7; d++) if (aus_full[K(c.id, d)] || (isFer(d) && fecha && c.descanso.indexOf(DIAS_PT[dia_semana(d)]) < 0)) ndias_ind++;
+        var banco_ok = banco_aplicavel(c, R), cap_base = Math.max(0, c.sem - ndias_ind * c.base);
+        var cap = banco_ok ? Math.max(cap_base, Math.max(0, LB.semanal_max_h * 60 - ndias_ind * c.base)) : cap_base;
+        estado[c.id] = { fim: ult_fim, turno_sem: null, turno_ant: ult_turno, run: run, min: 0, cap: cap, cap_base: cap_base, banco_ok: banco_ok, dias: {} };
+      });
+      var dias_sem = range(w0, w0 + 7).filter(function (d) { return !(isFer(d) && fecha); });
+      var cob = eq.cobertura, ordem = Object.keys(cob).sort(function (a, b) { return hm(turnos[a].inicio) - hm(turnos[b].inicio) || 0; });
+      var req = {}; ordem.forEach(function (t) { req[t] = 0; dias_sem.forEach(function (d) { req[t] += cob[t][dia_semana(d)]; }); });
+      var grupo = {}, cap_d = {};
+      membros.forEach(function (c) {
+        var sc = estado[c.id];
+        ordem.forEach(function (t) {
+          var lt = turno_periodo(turnos, t, w0).trab;
+          var ok = lt <= c.base + (sc.banco_ok ? LB.acrescimo_diario_h * 60 : 0);
+          if (c.turno_base && !g(eq, "turnos_rotativos", true) && c.turno_base !== t) ok = false;
+          cap_d[K(c.id, t)] = ok ? Math.min(MAX_CONS, fdiv(sc.cap, lt)) : 0;
+        });
+      });
+      var falta_t = {}; ordem.forEach(function (t) { falta_t[t] = req[t]; });
+      var livres_p = membros.slice();
+      [0, 1].forEach(function (passo) {
+        ordem.slice().sort(function (a, b) { return cmp([-req[a], a], [-req[b], b]); }).forEach(function (t) {
+          var ord = livres_p.slice().sort(function (a, b) { return cmp([estado[a.id].turno_ant === t ? 0 : 1, a.id], [estado[b.id].turno_ant === t ? 0 : 1, b.id]); });
+          for (var i = 0; i < ord.length; i++) {
+            var c = ord[i];
+            if (falta_t[t] <= 0) break;
+            if (passo === 0 && ["", t].indexOf(estado[c.id].turno_ant) < 0) continue;
+            if (c.turno_base && c.turno_base !== t && (cap_d[K(c.id, c.turno_base)] || 0) > 0) continue;
+            if (cap_d[K(c.id, t)] > 0) { grupo[c.id] = t; falta_t[t] -= cap_d[K(c.id, t)]; }
+          }
+          livres_p = livres_p.filter(function (c) { return !(c.id in grupo); });
+        });
+      });
+      livres_p.forEach(function (c) {
+        var opts = ordem.slice().sort(function (a, b) { return cmp([falta_t[a] * -1, a], [falta_t[b] * -1, b]); }).filter(function (t) { return cap_d[K(c.id, t)] > 0; });
+        if (opts.length) grupo[c.id] = opts[0];
+      });
+      dias_sem.forEach(function (d) {
+        ordem.forEach(function (tid) {
+          var n = cob[tid][dia_semana(d)], per_t = turno_periodo(turnos, tid, d);
+          for (var j = 0; j < n; j++) {
+            var cands = [];
+            membros.forEach(function (c) {
+              var s = estado[c.id];
+              if (grupo[c.id] !== tid || (d in s.dias) || aus_full[K(c.id, d)]) return;
+              if (c.descanso.indexOf(DIAS_PT[dia_semana(d)]) >= 0 && c.turno_base) return;
+              if (s.min + per_t.trab > s.cap) return;
+              if (s.fim !== null && per_t.ini - s.fim < DESC_D) return;
+              if (s.run >= MAX_CONS) return;
+              if (d === w0 && s.turno_ant && s.turno_ant !== tid && s.run > 0) return;
+              var usa_banco = s.min + per_t.trab <= s.cap_base ? 0 : 1;
+              cands.push([usa_banco, Object.keys(s.dias).length, s.run, c.id]);
+            });
+            if (!cands.length) { faltas.push({ equipa: eq.id, data: idx_dia(d), turno: tid }); continue; }
+            cands.sort(cmp);
+            var s = estado[cands[0][3]];
+            s.dias[d] = tid; s.min += per_t.trab; s.fim = per_t.fim; s.turno_sem = tid;
+          }
+        });
+        membros.forEach(function (c) { var s = estado[c.id]; s.run = (d in s.dias) ? s.run + 1 : 0; });
+      });
+      membros.forEach(function (c) {
+        var s = estado[c.id], livres = range(w0, w0 + 7).filter(function (d) { return !(d in s.dias); }), dO = null;
+        var alvo = c.descanso.length ? c.descanso[0] : "dom";
+        var pref_do = livres.filter(function (d) { return DIAS_PT[dia_semana(d)] === alvo; });
+        for (var i = 0; i < livres.length; i++) { var d = livres[i]; if (livres.indexOf(d + 1) >= 0 || livres.indexOf(d - 1) >= 0) { dO = pref_do.length ? pref_do[0] : d; break; } }
+        if (dO === null && livres.length) dO = pref_do.length ? pref_do[0] : livres[livres.length - 1];
+        for (var d2 = w0; d2 < w0 + 7; d2++) {
+          if (d2 in s.dias) linhas.push({ data: idx_dia(d2), colaborador_id: c.id, turno_id: s.dias[d2], inicio: "", fim: "", pausas: "", afixada_em: afixada_em || "", origem: "proposta" });
+          else if (aus_full[K(c.id, d2)]) continue;
+          else linhas.push({ data: idx_dia(d2), colaborador_id: c.id, turno_id: d2 === dO ? "DO" : "DC", inicio: "", fim: "", pausas: "", afixada_em: afixada_em || "", origem: "proposta" });
+        }
+      });
+    });
+    linhas.sort(function (a, b) { return cmp([a.colaborador_id, a.data], [b.colaborador_id, b.data]); });
+    return { linhas: linhas, faltas: faltas };
+  }
+
+  function validar_escala(pacote, linhas) {
+    var datas = linhas.map(function (l) { return l.data; }).sort();
+    if (!datas.length) return [];
+    var d0 = dia_idx(datas[0]);
+    var ant = pacote.escala.filter(function (e) { var k = dia_idx(e.data); return d0 - 7 <= k && k < d0; });
+    var p2 = Object.assign({}, pacote, { escala: ant.concat(linhas), registos: [] });
+    var res = calcular(p2, idx_dia(d0 - 1), idx_dia(ant.length ? d0 - 7 : d0));
+    return res.alertas.filter(function (a) { return a.origem === "escala" && a.data >= datas[0]; });
+  }
+
+  function validar_registo(pacote, reg, hoje) {
+    var erros = [], d;
+    if (!pacote.colaboradores.some(function (c) { return c.id === reg.colaborador_id; })) erros.push("Colaborador desconhecido: " + reg.colaborador_id);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(reg.data || "")) { erros.push("Data inválida (use AAAA-MM-DD): " + reg.data); return { erros: erros, novos: [] }; }
+    d = dia_idx(reg.data);
+    ["entrada", "saida"].forEach(function (k) { try { var x = hm(reg[k] || ""); if (x < 0 || x >= 1440) throw 0; } catch (e) { erros.push("Hora de " + k + " inválida (use HH:MM): " + reg[k]); } });
+    try { parse_pausas(reg.pausas || ""); } catch (e) { erros.push("Pausas inválidas (use HH:MM-HH:MM;HH:MM-HH:MM): " + reg.pausas); }
+    if (erros.length) return { erros: erros, novos: [] };
+    if (d > dia_idx(hoje)) erros.push("Data no futuro: " + reg.data);
+    var max_per_h = num(v(pacote.regras, "registo_tempos", "max_duracao_periodo_validacao_h"), 16);
+    var p = construir_periodo(d, reg.entrada, reg.saida, reg.pausas || "");
+    if (p.fim - p.ini > Math.trunc(max_per_h * 60)) erros.push("Período de " + fmt_min(p.fim - p.ini) + ": mais de " + max_per_h + " h; confirme as horas.");
+    pacote.registos.forEach(function (r) {
+      if (r.colaborador_id !== reg.colaborador_id || !r.saida || r === reg) return;
+      var q = construir_periodo(dia_idx(r.data), r.entrada, r.saida, r.pausas || "");
+      if (sobrepor(p.ini, p.fim, q.ini, q.fim) > 0) erros.push("Sobrepõe-se ao registo " + r.id + " (" + r.data + " " + r.entrada + "-" + r.saida + ").");
+    });
+    if (erros.length) return { erros: erros, novos: [] };
+    var maxd = reg.data; pacote.registos.forEach(function (r) { if (r.data > maxd) maxd = r.data; });
+    var antes = calcular(pacote, maxd), ids = {};
+    antes.alertas.forEach(function (a) { ids[a.id] = 1; });
+    var depois = calcular(Object.assign({}, pacote, { registos: pacote.registos.concat([reg]) }), antes.meta.ate);
+    return { erros: [], novos: depois.alertas.filter(function (a) { return !ids[a.id] && a.colaborador_id === reg.colaborador_id; }) };
+  }
+
+
+  function resumo_mensal(pacote, res, mes, colab_id) {
+    var col = res.colaboradores.filter(function (c) { return c.id === colab_id; })[0];
+    var nc = norm_colab(pacote.colaboradores.filter(function (c) { return c.id === colab_id; })[0]);
+    var dias = res.dias.filter(function (r) { return r.c === colab_id && r.data.indexOf(mes) === 0; });
+    var al = res.alertas.filter(function (a) { return a.colaborador_id === colab_id && a.data.indexOf(mes) === 0; });
+    var movs = res.movimentos.filter(function (m) { return m.colaborador_id === colab_id && m.data.indexOf(mes) === 0; });
+    function S(k) { var t = 0; dias.forEach(function (r) { t += r[k]; }); return t; }
+    var acr = S("acr_milli") / 1000.0, fer_acr = S("fer_acr_milli") / 1000.0, vh = nc.vh, n_pct = num(v(pacote.regras, "trabalho_noturno", "acrescimo_pct"));
+    var resumo = { colaborador: colab_id, nome: col.nome, equipa: col.equipa, mes: mes,
+      horas_trabalhadas: fmt_min(S("trab")), horas_normais: fmt_min(S("normal")), suplementar: fmt_min(S("sup")), noturno: fmt_min(S("noct")),
+      banco_credito: fmt_min(S("credito")), banco_debito: fmt_min(S("debito")), tolerancias: fmt_min(S("tol")), faltas_nao_justificadas: fmt_min(S("falta")),
+      descanso_compensatorio_feriado: fmt_min(S("desc_feriado")), saldo_banco_atual: fmt_min(col.banco.saldo),
+      valor_suplementar_eur: vh ? r2((S("sup") / 60.0) * vh + (acr / 60.0) * vh) : null,
+      acrescimo_noturno_eur: vh ? r2(S("noct") / 60.0 * vh * n_pct / 100.0) : null,
+      acrescimo_feriado_eur: vh ? r2((fer_acr / 60.0) * vh) : null,
+      retribuicao_isencao_eur: (function () {
+        if (!nc.isento || nc.isencao_renuncia || !vh) return null;
+        var ret = v(pacote.regras, "isencao_horario", "retribuicao_especifica_min_h") || {};
+        var mod = modalidade_isencao(nc, pacote.regras), mins = 0, pct = num(v(pacote.regras, "trabalho_suplementar", "acrescimos_pct").util_primeira);
+        if (mod === "sem_limite" || mod === "alargamento_determinado") {
+          var du = 0; dias.forEach(function (r) { if ((r.tipo === "util" || r.tipo === "feriado_trabalho") && r.trab > 0) du += 1; });
+          mins = Math.round(num(ret.sem_limite_ou_alargamento_dia, 1) * 60 * du);
+        } else {
+          var sems = {}; dias.forEach(function (r) { if (r.trab > 0) sems[segunda(dia_idx(r.data))] = 1; });
+          mins = Math.round(num(ret.observancia_pnt_semana, 2) * 60 * Object.keys(sems).length);
+        }
+        return mins ? r2((mins / 60.0) * vh * (1 + pct / 100.0)) : 0.0;
+      })(),
+      violacoes: al.filter(function (a) { return a.nivel === "violacao"; }).length, avisos: al.filter(function (a) { return a.nivel === "aviso"; }).length };
+    return { resumo: resumo, dias: dias, alertas: al, movimentos: movs };
+  }
+
+  function _chave_linha(nome, r) {
+    if (nome === "escala") return (r.colaborador_id || "") + "|" + (r.data || "");
+    return String(r.id || "");
+  }
+  function _ts_linha(r) { return String(r.updated_at || r.registado_em || r.afixada_em || "").trim(); }
+  function merge_pacotes(atual, recebido) {
+    var novo = JSON.parse(JSON.stringify(atual)), conflitos = [], stats = { adicionados: 0, atualizados: 0, mantidos: 0 };
+    ["colaboradores", "escala", "registos", "ausencias", "movimentos_banco"].forEach(function (nome) {
+      if (!(nome in recebido)) return;
+      var cols = ESQUEMA[nome].filter(function (c) { return c !== "updated_at"; });
+      var atuais = (novo[nome] || []).slice(), idx_map = {};
+      atuais.forEach(function (row, i) { var k = _chave_linha(nome, row); if (k) idx_map[k] = i; });
+      (recebido[nome] || []).forEach(function (imp) {
+        var row_imp = {}; ESQUEMA[nome].forEach(function (c) { row_imp[c] = imp[c] != null ? String(imp[c]) : ""; });
+        var k = _chave_linha(nome, row_imp);
+        if (!k || !(k in idx_map)) { atuais.push(row_imp); if (k) idx_map[k] = atuais.length - 1; stats.adicionados += 1; return; }
+        var pos = idx_map[k], row_loc = {}; ESQUEMA[nome].forEach(function (c) { row_loc[c] = atuais[pos][c] != null ? String(atuais[pos][c]) : ""; });
+        var igual = cols.every(function (c) { return (row_loc[c] || "") === (row_imp[c] || ""); });
+        var ta = _ts_linha(row_loc), tb = _ts_linha(row_imp);
+        if (igual) { if (tb > ta) { row_loc.updated_at = row_imp.updated_at || tb; atuais[pos] = row_loc; } stats.mantidos += 1; return; }
+        var vencedor;
+        if (tb > ta) { atuais[pos] = row_imp; vencedor = "importado"; stats.atualizados += 1; }
+        else if (ta > tb) { vencedor = "local"; stats.mantidos += 1; }
+        else { vencedor = "empate_mantido_local"; stats.mantidos += 1; }
+        conflitos.push({ tabela: nome, id: k, vencedor: vencedor, ts_local: ta, ts_importado: tb });
+      });
+      novo[nome] = atuais;
+    });
+    if (Array.isArray(recebido.equipas)) {
+      var eqs = (novo.equipas || []).slice(), eq_idx = {};
+      eqs.forEach(function (e, i) { if (e.id) eq_idx[e.id] = i; });
+      recebido.equipas.forEach(function (e) {
+        var eid = e.id;
+        if (!eid || !(eid in eq_idx)) { eqs.push(e); if (eid) eq_idx[eid] = eqs.length - 1; stats.adicionados += 1; }
+        else {
+          var loc = eqs[eq_idx[eid]];
+          if (JSON.stringify(loc) !== JSON.stringify(e)) {
+            var ta = String(loc.updated_at || ""), tb = String(e.updated_at || ""), vencedor;
+            if (tb > ta) { eqs[eq_idx[eid]] = e; vencedor = "importado"; stats.atualizados += 1; }
+            else if (ta > tb) { vencedor = "local"; stats.mantidos += 1; }
+            else { vencedor = "empate_mantido_local"; stats.mantidos += 1; }
+            conflitos.push({ tabela: "equipas", id: eid, vencedor: vencedor, ts_local: ta, ts_importado: tb });
+          }
+        }
+      });
+      novo.equipas = eqs;
+    }
+    if (recebido.turnos && typeof recebido.turnos === "object" && !Array.isArray(recebido.turnos)) {
+      var ts = Object.assign({}, novo.turnos || {});
+      Object.keys(recebido.turnos).forEach(function (k) {
+        var val = recebido.turnos[k];
+        if (!(k in ts)) { ts[k] = val; stats.adicionados += 1; }
+        else if (JSON.stringify(ts[k]) !== JSON.stringify(val)) {
+          var ta = (ts[k] && ts[k].updated_at) ? String(ts[k].updated_at) : "";
+          var tb = (val && val.updated_at) ? String(val.updated_at) : "";
+          var vencedor;
+          if (tb > ta) { ts[k] = val; vencedor = "importado"; stats.atualizados += 1; }
+          else if (ta > tb) { vencedor = "local"; stats.mantidos += 1; }
+          else { vencedor = "empate_mantido_local"; stats.mantidos += 1; }
+          conflitos.push({ tabela: "turnos", id: k, vencedor: vencedor, ts_local: ta, ts_importado: tb });
+        }
+      });
+      novo.turnos = ts;
+    }
+    if (recebido.regras && typeof recebido.regras === "object") {
+      var loc_r = novo.regras || {}, imp_r = recebido.regras;
+      if (JSON.stringify(loc_r) !== JSON.stringify(imp_r)) {
+        var ta = String((loc_r && (loc_r._atualizado_em || loc_r.updated_at)) || "");
+        var tb = String((imp_r && (imp_r._atualizado_em || imp_r.updated_at)) || "");
+        var chaves = chaves_regras_diferentes(loc_r, imp_r, "");
+        var vencedor;
+        if (tb > ta) { novo.regras = imp_r; vencedor = "importado"; stats.atualizados += 1; }
+        else { vencedor = (ta === tb) ? "empate_mantido_local" : "local"; stats.mantidos += 1; }
+        conflitos.push({ tabela: "regras", id: "regras", vencedor: vencedor, ts_local: ta, ts_importado: tb, chaves: chaves });
+      }
+    }
+    if (recebido.auditoria) novo.auditoria = merge_auditoria(novo.auditoria || [], recebido.auditoria || []);
+    return { pacote: novo, resumo: Object.assign({}, stats, { conflitos: conflitos }) };
+  }
+  function chaves_regras_diferentes(a, b, prefixo) {
+    if (typeof a !== "object" || !a || typeof b !== "object" || !b || Array.isArray(a) || Array.isArray(b)) return a !== b ? [prefixo || "regras"] : [];
+    var keys = {}, out = [];
+    Object.keys(a).concat(Object.keys(b)).forEach(function (k) { keys[k] = 1; });
+    Object.keys(keys).sort().forEach(function (k) {
+      var caminho = prefixo ? prefixo + "." + k : k;
+      if (!(k in a) || !(k in b)) out.push(caminho);
+      else if (typeof a[k] === "object" && a[k] && typeof b[k] === "object" && b[k] && !Array.isArray(a[k]) && !Array.isArray(b[k])) out = out.concat(chaves_regras_diferentes(a[k], b[k], caminho));
+      else if (JSON.stringify(a[k]) !== JSON.stringify(b[k])) out.push(caminho);
+    });
+    return out;
+  }
+  function merge_auditoria(local, recebido) {
+    var por = {}, out = [];
+    (local || []).concat(recebido || []).forEach(function (e) {
+      var k = e.hash || [e.ts || "", e.modo || "", e.acao || "", e.entidade || "", e.detalhe || "", e.prev || ""].join("\n");
+      if (!por[k]) { por[k] = e; out.push(e); }
+    });
+    out.sort(function (a, b) { return cmp([String(a.ts || ""), String(a.hash || "")], [String(b.ts || ""), String(b.hash || "")]); });
+    return out;
+  }
+
+
+  function ancoras_apos_corte(lista, limite, ancoras) {
+    limite = limite == null ? 500 : limite;
+    ancoras = (ancoras || []).slice();
+    lista = lista || [];
+    if (lista.length <= limite) return { lista: lista.slice(), ancoras: unicas_ancoras(ancoras, lista) };
+    var cortados = lista.slice(0, lista.length - limite), keep = lista.slice(-limite);
+    cortados.forEach(function (e) { if (e.hash) ancoras.push(e.hash); });
+    if (keep.length) {
+      var prev = keep[0].prev || "", keepH = {};
+      keep.forEach(function (e) { if (e.hash) keepH[e.hash] = 1; });
+      if (prev && !keepH[prev]) ancoras.push(prev);
+    }
+    return { lista: keep, ancoras: unicas_ancoras(ancoras, keep) };
+  }
+  function unicas_ancoras(ancoras, lista) {
+    var keepH = {}, out = [], visto = {};
+    (lista || []).forEach(function (e) { if (e.hash) keepH[e.hash] = 1; });
+    (ancoras || []).forEach(function (h) { if (h && !keepH[h] && !visto[h]) { visto[h] = 1; out.push(h); } });
+    return out.slice(-200);
+  }
+  function verificar_auditoria(lista, ancora) {
+    var hashes = {}, partidas = [];
+    (lista || []).forEach(function (e) { if (e.hash) hashes[e.hash] = 1; });
+    if (Array.isArray(ancora)) ancora.forEach(function (h) { if (h) hashes[h] = 1; });
+    else if (ancora) hashes[ancora] = 1;
+    (lista || []).forEach(function (e, i) {
+      var prev = e.prev || "";
+      if (!e.hash) partidas.push({ indice: i, motivo: "hash_invalido", hash: e.hash });
+      else if (prev && !hashes[prev]) partidas.push({ indice: i, motivo: "prev_ausente", hash: e.hash });
+    });
+    return [partidas.length === 0, partidas];
+  }
+
+  var API = { merge_pacotes: merge_pacotes, merge_auditoria: merge_auditoria, verificar_auditoria: verificar_auditoria, ancoras_apos_corte: ancoras_apos_corte, resumo_mensal: resumo_mensal, VERSAO: VERSAO, ESQUEMA: ESQUEMA, TIPOS_AUSENCIA: TIPOS_AUSENCIA, TIPOS_MOVIMENTO: TIPOS_MOVIMENTO, DIAS_PT: DIAS_PT,
+    dia_idx: dia_idx, idx_dia: idx_dia, dia_semana: dia_semana, segunda: segunda, hm: hm, fmt_min: fmt_min, r2: r2, f2: f2, num: num,
+    norm_colab: norm_colab, construir_periodo: construir_periodo, fatias_periodo: fatias_periodo, minutos_noturnos: minutos_noturnos, feriados_ano: feriados_ano, pascoa: pascoa,
+    calcular: calcular, propor_escala: propor_escala, validar_escala: validar_escala, validar_registo: validar_registo, v: v, isencao_sem_teto: isencao_sem_teto };
+  if (typeof module !== "undefined" && module.exports) module.exports = API; else root.MotorBH = API;
+})(typeof window !== "undefined" ? window : this);
+
+</script>
+<script>
+var EXEMPLO = {"versao": "1.0.0", "regras": {"_sobre": "Ficheiro de regras editável. O motor (motor.py) e a app (app/banco-horas.html) leem apenas o campo 'valor' de cada regra. Os campos 'artigo', 'fonte', 'estado' e 'nota' são documentação. ATENÇÃO: a convenção coletiva (IRCT) aplicável à empresa pode alterar muitos destes valores dentro do que a lei permite; confirme-a antes de usar em produção. Estados: CONFIRMADO (texto legal lido na fonte), A CONFIRMAR (não verificado ou depende de interpretação), DECISAO_EMPRESA (a lei deixa à empresa, IRCT ou projeto de referendo).", "_versao_legal": "Código do Trabalho (Lei 7/2009) consolidado até à Lei 32/2025, de 27 de março (sem alterações posteriores publicadas até 23/11/2026; a proposta 'Trabalho XXI' foi rejeitada a 19/06/2026). Valores alinhados com regras-jurista.md. Fontes: https://diariodarepublica.pt/dr/legislacao-consolidada/lei/2009-34546475 e https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis", "empresa": {"nome": {"valor": "Empresa EXEMPLO, Lda.", "estado": "DECISAO_EMPRESA"}, "dimensao": {"valor": "pequena", "artigo": "CT art. 100.º (micro < 10, pequena 10 a 49, média 50 a 249, grande >= 250 trabalhadores)", "estado": "A CONFIRMAR", "nota": "Configuração: micro, pequena, media, grande (art. 100.º: média de trabalhadores do ano civil anterior). Define limite anual de suplementar (175/150 h) e antecedência de afixação de horário (3/7 dias)."}, "regiao": {"valor": "Açores", "estado": "CONFIRMADO", "artigo": "Indicação da empresa", "fonte": "Indicação da empresa (Açores); regras regionais em regras-jurista.md"}, "inspecao": {"valor": "Inspeção Regional do Trabalho (IRT) dos Açores", "artigo": "Lei 7/2009 art. 11.º n.º 1; DLR 19/2006/A art. 2.º; DRR 20/2024/A", "fonte": "https://portal.azores.gov.pt/web/irt/competencias-e-documentos-constitutivos", "estado": "CONFIRMADO", "nota": "Nos Açores as comunicações ao 'serviço com competência inspetiva' (referendo do banco grupal: art. 208.º-B n.º 5; redução/exclusão de intervalo: art. 213.º n.º 3) vão para a IRT, não para a ACT."}, "rmmg_mensal_eur": {"valor": 966, "artigo": "DLR 8/2002/A art. 3.º (acréscimo regional de 5%) sobre RMMG nacional de 920 € (DL 139/2025)", "fonte": "https://portal.azores.gov.pt/web/drqpe/salario-minimo-atualizado", "estado": "CONFIRMADO", "nota": "Usado para avisar quando o valor hora de um colaborador fica abaixo do mínimo: (Rm x 12) / (52 x n), art. 271.º."}}, "periodo_normal": {"max_diario_h": {"valor": 8, "artigo": "CT art. 203.º n.º 1", "fonte": "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/2009-34546475", "estado": "CONFIRMADO", "nota": "Pode ser reduzido por IRCT (n.º 4)."}, "max_semanal_h": {"valor": 40, "artigo": "CT art. 203.º n.º 1", "fonte": "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/2009-34546475", "estado": "CONFIRMADO"}, "tolerancia_min": {"valor": 15, "artigo": "CT art. 203.º n.º 3 e art. 226.º n.º 3 c)", "estado": "CONFIRMADO", "nota": "Tolerância excecional de 15 minutos; não é trabalho suplementar; o acréscimo é pago ao perfazer 4 horas ou no fim do ano civil.", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "tolerancia_pagamento_ao_perfazer_h": {"valor": 4, "artigo": "CT art. 203.º n.º 3", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}}, "banco_horas": {"regime": {"valor": "grupal_referendo", "artigo": "CT art. 208.º (IRCT), art. 208.º-B (grupal), art. 208.º-A REVOGADO", "estado": "DECISAO_EMPRESA", "nota": "Configuração: nenhum, irct, grupal_irct, grupal_referendo. Não existe banco de horas individual: art. 208.º-A revogado pela Lei 93/2019 (art. 10.º a)), acordos em curso cessaram até 1/10/2020 (art. 11.º n.º 5). O exemplo usa grupal_referendo só para demonstração: exige referendo aprovado por pelo menos 65% dos abrangidos, comunicado à IRT com 20 dias de antecedência."}, "limites": {"valor": {"irct": {"acrescimo_diario_h": 4, "semanal_max_h": 60, "anual_max_h": 200}, "grupal_irct": {"acrescimo_diario_h": 4, "semanal_max_h": 60, "anual_max_h": 200}, "grupal_referendo": {"acrescimo_diario_h": 2, "semanal_max_h": 50, "anual_max_h": 150}}, "artigo": "CT art. 208.º n.º 2 (IRCT: +4 h/dia, 60 h/semana, 200 h/ano); art. 208.º-B n.º 1 (grupal por IRCT remete para o art. 208.º); art. 208.º-B n.º 3 (referendo: +2 h/dia, 50 h/semana, 150 h/ano)", "fonte": "https://diariodarepublica.pt/dr/detalhe/lei/93-2019-124417106", "estado": "CONFIRMADO", "nota": "O IRCT pode afastar o limite anual por até 12 meses para evitar redução de trabalhadores (art. 208.º n.º 3)."}, "aprovacao_referendo_min_pct": {"valor": 65, "artigo": "CT art. 208.º-B n.º 6 e n.º 7", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "duracao_max_anos": {"valor": 4, "artigo": "CT art. 208.º-B n.º 4 b)", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "aviso_previo_referendo_dias": {"valor": 20, "artigo": "CT art. 208.º-B n.º 5", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "prazo_compensacao_meses": {"valor": 4, "artigo": "CT art. 208.º n.º 4 c) (o IRCT ou o projeto do referendo deve regular o período da compensação)", "estado": "DECISAO_EMPRESA", "nota": "A lei não fixa o prazo. O valor 4 é só de exemplo."}, "destino_credito_vencido": {"valor": "pagamento", "artigo": "CT art. 208.º n.º 4 a): redução do tempo de trabalho, aumento de férias ou pagamento em dinheiro", "estado": "DECISAO_EMPRESA", "nota": "Valores: pagamento, alerta. A lei não prevê a perda (caducidade) de horas trabalhadas; o motor não apaga créditos: quando vencem, gera o movimento de pagamento devido ou só um alerta. Perda de horas só se o IRCT o previr e mesmo assim: A CONFIRMAR com jurista."}, "aviso_previo_comunicacao_h": {"valor": 48, "artigo": "CT art. 208.º n.º 4 b)", "estado": "DECISAO_EMPRESA", "nota": "A antecedência é fixada pelo IRCT ou projeto. 48 h é exemplo."}, "excecao_filho_menor_3_anos": {"valor": true, "artigo": "CT art. 208.º-B n.º 13 b)", "estado": "CONFIRMADO", "nota": "Salvo concordância escrita, não se aplica a trabalhador com filho menor de 3 anos ou filho com deficiência ou doença crónica.", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "saldo_negativo_no_fim": {"valor": "alerta", "estado": "DECISAO_EMPRESA", "nota": "O que acontece a horas em débito no fim do período tem de constar do IRCT ou do projeto. A CONFIRMAR."}, "excecao_filho_3_a_6_anos": {"valor": true, "artigo": "CT art. 208.º-B n.º 13 c)", "estado": "CONFIRMADO", "nota": "Salvo concordância escrita, não se aplica a trabalhador com filho entre 3 e 6 anos que apresente declaração de que o outro progenitor trabalha e está impossibilitado de prestar assistência.", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}}, "descansos": {"descanso_diario_min_h": {"valor": 11, "artigo": "CT art. 214.º n.º 1", "estado": "CONFIRMADO", "nota": "Exceções no n.º 2 (cargos de direção isentos, força maior, trabalho fracionado, continuidade com IRCT).", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "descanso_semanal_min_dias": {"valor": 1, "artigo": "CT art. 232.º n.º 1", "estado": "CONFIRMADO", "nota": "O motor verifica por semana civil (segunda a domingo). A forma de contar a semana pode ser definida pela empresa: A CONFIRMAR.", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "max_dias_consecutivos": {"valor": 6, "artigo": "CT art. 221.º n.º 5 (turnos: pelo menos um dia de descanso em cada período de sete dias)", "estado": "CONFIRMADO", "nota": "Aplicado como violação em equipas com laboracao_continua; nas restantes é aviso.", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "intervalo_min_h": {"valor": 1, "artigo": "CT art. 213.º n.º 1", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "intervalo_max_h": {"valor": 2, "artigo": "CT art. 213.º n.º 1", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "max_trabalho_consecutivo_h": {"valor": 5, "artigo": "CT art. 213.º n.º 1", "estado": "CONFIRMADO", "nota": "IRCT pode permitir até 6 h (n.º 2).", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "max_trabalho_consecutivo_periodo_longo_h": {"valor": 6, "artigo": "CT art. 213.º n.º 1 (quando o período diário é superior a 10 h)", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "mudanca_turno_so_apos_descanso": {"valor": true, "artigo": "CT art. 221.º n.º 4", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "descanso_compensatorio_dias_uteis": {"valor": 3, "artigo": "CT art. 229.º n.º 3 e n.º 4", "estado": "CONFIRMADO", "nota": "Trabalho suplementar que impede o descanso diário dá descanso equivalente; trabalho em dia de descanso semanal obrigatório dá um dia de descanso; ambos num dos 3 dias úteis seguintes.", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "descanso_semanal_continuo_min_h": {"valor": 35, "artigo": "CT art. 233.º n.º 1 (descanso semanal obrigatório + 11 h de descanso diário em continuidade)", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis", "estado": "CONFIRMADO", "nota": "As 11 h consideram-se cumpridas pelo descanso complementar gozado imediatamente antes ou depois. Exceções no n.º 2."}, "periodo_longo_limiar_h": {"valor": 10, "artigo": "CT art. 213.º n.º 1", "estado": "CONFIRMADO", "nota": "Se o período de trabalho diário for superior a 10 h, o limite de trabalho consecutivo sem intervalo sobe para 6 h.", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}}, "trabalho_suplementar": {"anual_max_h": {"valor": {"micro": 175, "pequena": 175, "media": 150, "grande": 150}, "artigo": "CT art. 228.º n.º 1 a) e b)", "estado": "CONFIRMADO", "nota": "IRCT pode subir até 200 h (n.º 2).", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "anual_max_tempo_parcial_h": {"valor": 80, "artigo": "CT art. 228.º n.º 1 c)", "estado": "CONFIRMADO", "nota": "Ou a proporção do período normal face a tempo completo, quando superior. Acordo escrito até 130 h; IRCT até 200 h (n.º 3).", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "diario_max_dia_util_h": {"valor": 2, "artigo": "CT art. 228.º n.º 1 d)", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "diario_max_dia_descanso_feriado": {"valor": "periodo_normal_diario", "artigo": "CT art. 228.º n.º 1 e)", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "acrescimos_pct": {"valor": {"ate_horas_anuais": 100, "util_primeira": 25, "util_seguintes": 37.5, "descanso_feriado": 50, "acima_util_primeira": 50, "acima_util_seguintes": 75, "acima_descanso_feriado": 100}, "artigo": "CT art. 268.º n.º 1 e n.º 2 (redação da Lei 13/2023)", "estado": "CONFIRMADO", "nota": "O motor aplica as percentagens ao tempo real. Se a 'fração' de hora deve ser arredondada à hora inteira: A CONFIRMAR.", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "registo_obrigatorio": {"valor": true, "artigo": "CT art. 231.º", "estado": "CONFIRMADO", "nota": "Anotar início e fim, fundamento e descansos compensatórios; conservar relação nominal 5 anos.", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "diario_max_meio_dia_complementar": {"valor": "metade_periodo_normal_diario", "artigo": "CT art. 228.º n.º 1 f)", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "valor_hora_formula": {"valor": "(Rm*12)/(52*n)", "artigo": "CT art. 271.º", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "forca_maior_sem_limites_anuais": {"valor": true, "artigo": "CT art. 227.º n.º 2 e art. 228.º n.º 4", "estado": "CONFIRMADO", "nota": "Suplementar por força maior só tem o teto da média de 48 h (art. 211.º). No registo, motivo_suplementar = forca_maior.", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "primeira_hora_min": {"valor": 60, "artigo": "CT art. 268.º n.º 1", "estado": "CONFIRMADO", "nota": "Duração em minutos da 1.ª hora de trabalho suplementar em dia útil antes das horas subsequentes.", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "meses_retribuicao_ano": {"valor": 12, "artigo": "CT art. 271.º", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "semanas_ano": {"valor": 52, "artigo": "CT art. 271.º", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}}, "trabalho_noturno": {"inicio": {"valor": "22:00", "artigo": "CT art. 223.º n.º 2", "estado": "CONFIRMADO", "nota": "IRCT pode fixar outro período de 7 a 11 h que inclua 0h às 5h.", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "fim": {"valor": "07:00", "artigo": "CT art. 223.º n.º 2", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "acrescimo_pct": {"valor": 25, "artigo": "CT art. 266.º n.º 1", "estado": "CONFIRMADO", "nota": "Exceções no n.º 3 (atividade noturna por natureza, ao público, retribuição já fixada a contar com isso).", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "trabalhador_noturno_min_h_dia": {"valor": 3, "artigo": "CT art. 224.º n.º 1", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "max_h_24h_atividade_risco": {"valor": 8, "artigo": "CT art. 224.º n.º 4", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}}, "media_semanal": {"max_media_h": {"valor": 48, "artigo": "CT art. 211.º n.º 1", "estado": "CONFIRMADO", "nota": "Inclui trabalho suplementar. Férias subtraídas ao período (n.º 2); doença e licenças contam pelo período normal (n.º 3).", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "periodo_referencia_meses": {"valor": 4, "artigo": "CT art. 211.º n.º 1 e art. 207.º n.º 1", "estado": "CONFIRMADO", "nota": "Sem IRCT: 4 meses (6 nos casos do art. 207.º n.º 2). IRCT até 12 meses.", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "inicio_periodo_referencia": {"valor": "2026-09-01", "estado": "DECISAO_EMPRESA"}}, "feriados": {"nacionais": {"valor": ["01-01", "sexta_santa", "pascoa", "04-25", "05-01", "corpo_deus", "06-10", "08-15", "10-05", "11-01", "12-01", "12-08", "12-25"], "artigo": "CT art. 234.º n.º 1", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "regionais_e_municipais": {"valor": [{"regra": "segunda_espirito_santo", "nome": "Dia da Região Autónoma dos Açores (Segunda-Feira do Espírito Santo)", "aplicar": true}], "artigo": "Decreto Regional 13/80/A; DLR 19/2006/A art. 6.º; Lei 7/2009 art. 11.º n.º 4; feriado municipal: CT art. 235.º", "fonte": "https://diariodarepublica.pt/dr/detalhe/decreto-regional/13-1980-470865", "estado": "CONFIRMADO", "nota": "Feriado regional obrigatório. O feriado municipal e a Terça-Feira de Carnaval dependem do concelho e do IRCT ou contrato: A CONFIRMAR. Acrescente {\"data\": \"MM-DD\", \"nome\": \"...\", \"aplicar\": true}."}, "trabalho_normal_em_feriado": {"valor": "descanso", "artigo": "CT art. 269.º n.º 2", "estado": "DECISAO_EMPRESA", "nota": "Escolha do empregador: descanso compensatório de metade das horas (descanso) ou acréscimo de 50% (acrescimo)."}, "acrescimo_trabalho_normal_pct": {"valor": 50, "artigo": "CT art. 269.º n.º 2", "estado": "CONFIRMADO", "nota": "Acréscimo de 50% sobre a retribuição correspondente quando trabalho_normal_em_feriado = 'acrescimo' (alternativa ao descanso compensatório de metade das horas).", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}}, "ferias": {"dias_uteis_min": {"valor": 22, "artigo": "CT art. 238.º n.º 1", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "cumulacao_entre_ilhas_anos": {"valor": 2, "artigo": "DLR 19/2006/A art. 8.º (republicado pelo DLR 23/2021/A)", "estado": "CONFIRMADO", "nota": "Nos Açores, podem ser acumuladas férias de 2 anos seguidos quando gozadas noutras ilhas, na Madeira, no continente ou no estrangeiro.", "fonte": "https://files.diariodarepublica.pt/1s/2021/07/14100/0005000056.pdf"}}, "registo_tempos": {"obrigatorio": {"valor": true, "artigo": "CT art. 202.º n.º 1 e n.º 2", "estado": "CONFIRMADO", "nota": "Início, termo e interrupções, por trabalhador, dia e semana, incluindo isentos de horário.", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "conservacao_anos": {"valor": 5, "artigo": "CT art. 202.º n.º 4", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "prazo_visar_trabalho_externo_dias": {"valor": 15, "artigo": "CT art. 202.º n.º 3", "estado": "CONFIRMADO", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "max_duracao_periodo_validacao_h": {"valor": 16, "artigo": "Regra interna de validação", "estado": "DECISAO_EMPRESA", "nota": "Limite máximo de duração de um turno na validação de entrada/saída para detetar enganos."}, "trabalhadores_moveis_portaria_7_2022": {"valor": true, "artigo": "Portaria n.º 7/2022, de 4 de janeiro; DL 237/2007; Reg. (CE) 561/2006", "estado": "A CONFIRMAR", "nota": "A CONFIRMAR se os motoristas da empresa estão sujeitos ao registo específico de trabalhadores móveis (integridade/inviolabilidade, exame quinzenal e conservação por 5 anos).", "fonte": "https://diariodarepublica.pt/dr/legislacao-consolidada/portaria/2022-177088832"}}, "calculo": {"atribuicao_periodo_ao_dia_de_inicio": {"valor": true, "artigo": "CT art. 200.º n.º 3", "estado": "A CONFIRMAR", "nota": "O motor atribui um turno que passa a meia-noite ao dia em que começou. As horas noturnas e de feriado contam pela hora real. Se o IRCT mandar dividir o turno pelos dois dias: A CONFIRMAR."}, "fuso_horario": {"valor": "Atlantic/Azores", "estado": "CONFIRMADO", "nota": "Horas registadas em hora local. Nas noites de mudança de hora (último domingo de março e de outubro) o motor assinala o turno para correção manual.", "artigo": "Fuso horário legal da Região Autónoma dos Açores (UTC-1 / UTC+0 no verão)", "fonte": "Base de dados IANA tz: Atlantic/Azores"}, "mudanca_hora_janela_min": {"valor": 120, "artigo": "Fuso Atlantic/Azores (DST)", "estado": "CONFIRMADO", "nota": "Janela de 2 h na madrugada dos domingos de mudança de hora (março e outubro)."}}, "horario": {"afixacao_antecedencia_dias": {"valor": {"micro": 3, "pequena": 7, "media": 7, "grande": 7}, "artigo": "CT art. 217.º n.º 2", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis", "estado": "CONFIRMADO", "nota": "Alteração de horário exige consulta prévia e afixação; exceção até 1 semana, 3 vezes por ano (n.º 3)."}}, "_alinhamento": "Valores conferidos com regras-jurista.md (verificado a 23/11/2026).", "isencao_horario": {"exige_acordo_escrito": {"valor": true, "artigo": "CT art. 218.º n.º 1", "estado": "CONFIRMADO", "nota": "Admissível apenas para cargos de administração/direção, confiança, fiscalização, trabalhos preparatórios/complementares ou atividade regular fora do estabelecimento sem controlo imediato.", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "modalidade_supletiva": {"valor": "sem_limite", "artigo": "CT art. 219.º n.º 1 a) e n.º 2", "estado": "CONFIRMADO", "nota": "Modalidades: sem_limite (a), supletiva), alargamento_determinado (b)), observancia_pnt (c)).", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "dispensa_descanso_diario_e_media_48h": {"valor": true, "artigo": "CT art. 211.º n.º 4 e art. 214.º n.º 2 a)", "estado": "A CONFIRMAR", "nota": "A CONFIRMAR caso a caso: só dispensa o descanso diário e a média de 48 h para cargos de administração/direção ou poder de decisão autónomo (alíneas a) ou b) do art. 219.º n.º 1). Não dispensa descanso semanal nem registo de tempos (art. 202.º n.º 1).", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}, "retribuicao_especifica_min_h": {"valor": {"sem_limite_ou_alargamento_dia": 1, "observancia_pnt_semana": 2}, "artigo": "CT art. 265.º n.º 1", "estado": "CONFIRMADO", "nota": "Retribuição específica mínima: 1 h de suplementar/dia (modalidades a) e b)) ou 2 h/semana (modalidade c)), salvo IRCT ou renúncia em cargos de administração/direção (n.º 2).", "fonte": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis"}}}, "equipas": [{"id": "LOJ", "nome": "Loja (exemplo)", "laboracao_continua": false, "funciona_feriados": true, "turnos_rotativos": true, "turnos": ["LM", "LT", "LP"], "cobertura": {"LM": [2, 2, 2, 2, 2, 3, 2], "LT": [2, 2, 2, 2, 2, 3, 1], "LP": [1, 1, 1, 1, 1, 0, 0]}}, {"id": "ARM", "nome": "Armazém e Logística (exemplo)", "laboracao_continua": false, "funciona_feriados": false, "turnos_rotativos": true, "turnos": ["AM", "AT", "AN"], "cobertura": {"AM": [2, 2, 2, 2, 2, 1, 0], "AT": [1, 1, 1, 1, 1, 1, 0], "AN": [1, 1, 1, 1, 1, 0, 0]}}, {"id": "ESC", "nome": "Escritório (exemplo)", "laboracao_continua": false, "funciona_feriados": false, "turnos_rotativos": false, "turnos": ["ESC"], "cobertura": {}}], "turnos": {"LM": {"nome": "Loja manhã", "inicio": "08:00", "fim": "17:00", "pausas": [["12:00", "13:00"]]}, "LT": {"nome": "Loja tarde", "inicio": "13:00", "fim": "22:00", "pausas": [["17:00", "18:00"]]}, "LP": {"nome": "Loja reforço (tempo parcial)", "inicio": "17:00", "fim": "21:00", "pausas": []}, "AM": {"nome": "Armazém manhã", "inicio": "06:00", "fim": "15:00", "pausas": [["10:00", "11:00"]]}, "AT": {"nome": "Armazém tarde", "inicio": "14:00", "fim": "23:00", "pausas": [["18:00", "19:00"]]}, "AN": {"nome": "Armazém noite", "inicio": "22:00", "fim": "07:00", "pausas": [["02:00", "03:00"]]}, "ESC": {"nome": "Escritório", "inicio": "09:00", "fim": "18:00", "pausas": [["13:00", "14:00"]]}}, "colaboradores": [{"id": "c01", "nome": "Colaborador 1", "equipa": "LOJ", "funcao": "Função exemplo", "tipo_contrato": "tempo_completo", "horas_semanais": 40, "horas_diarias": 8, "banco_horas": "sim", "concordancia_escrita_banco": "", "filho_menor_3": "nao", "filho_3_a_6_declaracao": "", "noturno_risco": "nao", "isento_horario": "nao", "isencao_acordo_escrito": "", "isencao_renuncia_retribuicao": "", "isencao_modalidade": "", "dias_descanso": "", "turno_base": "", "valor_hora_eur": "", "ativo": "sim", "nota": "Exemplo fictício, sem dados pessoais", "updated_at": ""}, {"id": "c02", "nome": "Colaborador 2", "equipa": "ARM", "funcao": "Função exemplo", "tipo_contrato": "tempo_completo", "horas_semanais": 40, "horas_diarias": 8, "banco_horas": "sim", "concordancia_escrita_banco": "", "filho_menor_3": "nao", "filho_3_a_6_declaracao": "", "noturno_risco": "nao", "isento_horario": "nao", "isencao_acordo_escrito": "", "isencao_renuncia_retribuicao": "", "isencao_modalidade": "", "dias_descanso": "", "turno_base": "", "valor_hora_eur": "", "ativo": "sim", "nota": "Exemplo fictício, sem dados pessoais", "updated_at": ""}, {"id": "c03", "nome": "Colaborador 3", "equipa": "ESC", "funcao": "Função exemplo", "tipo_contrato": "tempo_completo", "horas_semanais": 40, "horas_diarias": 8, "banco_horas": "sim", "concordancia_escrita_banco": "", "filho_menor_3": "nao", "filho_3_a_6_declaracao": "", "noturno_risco": "nao", "isento_horario": "nao", "isencao_acordo_escrito": "", "isencao_renuncia_retribuicao": "", "isencao_modalidade": "", "dias_descanso": "", "turno_base": "", "valor_hora_eur": "", "ativo": "sim", "nota": "Exemplo fictício, sem dados pessoais", "updated_at": ""}], "escala": [], "registos": [], "ausencias": [], "movimentos_banco": []};
+</script>
+<script>
+(function () {
+"use strict";
+var M = window.MotorBH, CHAVE = "bh_pacote_v1", CHAVE_PIN = "bh_pin_v1", CHAVE_AUD = "bh_audit_v1";
+var ROT_AUS = { ferias: "Férias", baixa: "Baixa médica", falta_justificada: "Falta justificada", falta_injustificada: "Falta injustificada", licenca_parental: "Licença parental", compensacao_banco: "Compensação do banco", descanso_compensatorio: "Descanso compensatório", formacao: "Formação" };
+var ROT_MOV = { credito: "Crédito (saldo transitado)", compensacao: "Compensação gozada", ferias: "Troca por férias", pagamento: "Pagamento em dinheiro", ajuste: "Ajuste manual" };
+var ROT_ORIG = { ipad: "iPad (ponto)", ipad_manual: "iPad (manual)", ia: "Assistente IA", cli: "Computador", app: "App", manual: "Manual", automatico: "Automático", registo: "Registo", escala: "Escala", banco: "Banco", colaborador: "Colaborador", ausencia: "Ausência", proposta: "Proposta", exemplo: "Exemplo" };
+var ROT_DIA = { util: "Dia útil", feriado_trabalho: "Feriado (trabalhado)", feriado: "Feriado", descanso_obrigatorio: "Descanso obrigatório", descanso_complementar: "Descanso complementar", ferias: "Férias", ausencia: "Ausência" };
+var ROT_EST = { CONFIRMADO: "Confirmado", "A CONFIRMAR": "A confirmar", DECISAO_EMPRESA: "Decisão da empresa" };
+var PIN_ITER = 200000, pinFalhas = 0, CHAVE_DEV = "bh_dispositivo_v1";
+function bufHex(buf) { return Array.from(new Uint8Array(buf)).map(function (b) { return ("0" + b.toString(16)).slice(-2); }).join(""); }
+function hexBuf(h) { var a = new Uint8Array(h.length / 2); for (var i = 0; i < a.length; i++) a[i] = parseInt(h.substr(i * 2, 2), 16); return a; }
+/* SHA-256 síncrono (auditoria e recurso PBKDF2). PIN usa WebCrypto quando existe. */
+function rotr(x, n) { return (x >>> n) | (x << (32 - n)); }
+function sha256u8(bytes) {
+  bytes = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
+  var K = [0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+  var H = [0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+  var extra = (64 - ((bytes.length + 9) % 64)) % 64;
+  var bin = new Uint8Array(bytes.length + 1 + extra + 8);
+  bin.set(bytes); bin[bytes.length] = 0x80;
+  var bitLen = bytes.length * 8;
+  bin[bin.length - 4] = (bitLen >>> 24) & 255;
+  bin[bin.length - 3] = (bitLen >>> 16) & 255;
+  bin[bin.length - 2] = (bitLen >>> 8) & 255;
+  bin[bin.length - 1] = bitLen & 255;
+  for (var i = 0; i < bin.length; i += 64) {
+    var w = new Uint32Array(64), j, a, b, c, d, e, f, g, h, s0, s1, ch, maj, t1, t2, o;
+    for (j = 0; j < 16; j++) { o = i + j * 4; w[j] = ((bin[o] << 24) | (bin[o + 1] << 16) | (bin[o + 2] << 8) | bin[o + 3]) >>> 0; }
+    for (j = 16; j < 64; j++) { s0 = rotr(w[j-15],7) ^ rotr(w[j-15],18) ^ (w[j-15] >>> 3); s1 = rotr(w[j-2],17) ^ rotr(w[j-2],19) ^ (w[j-2] >>> 10); w[j] = (w[j-16] + s0 + w[j-7] + s1) >>> 0; }
+    a=H[0];b=H[1];c=H[2];d=H[3];e=H[4];f=H[5];g=H[6];h=H[7];
+    for (j = 0; j < 64; j++) { s1 = rotr(e,6)^rotr(e,11)^rotr(e,25); ch=(e&f)^((~e)&g); t1=(h+s1+ch+K[j]+w[j])>>>0; s0=rotr(a,2)^rotr(a,13)^rotr(a,22); maj=(a&b)^(a&c)^(b&c); t2=(s0+maj)>>>0; h=g;g=f;f=e;e=(d+t1)>>>0;d=c;c=b;b=a;a=(t1+t2)>>>0; }
+    H[0]=(H[0]+a)>>>0;H[1]=(H[1]+b)>>>0;H[2]=(H[2]+c)>>>0;H[3]=(H[3]+d)>>>0;H[4]=(H[4]+e)>>>0;H[5]=(H[5]+f)>>>0;H[6]=(H[6]+g)>>>0;H[7]=(H[7]+h)>>>0;
+  }
+  return H.map(function (x) { return ("00000000" + x.toString(16)).slice(-8); }).join("");
+}
+function sha256hex(texto) { return sha256u8(new TextEncoder().encode(String(texto))); }
+async function pbkdf2Web(pin, saltHex, iter) {
+  var key = await crypto.subtle.importKey("raw", new TextEncoder().encode(String(pin)), "PBKDF2", false, ["deriveBits"]);
+  var bits = await crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt: hexBuf(saltHex), iterations: iter }, key, 256);
+  return bufHex(bits);
+}
+function sha256bytes(u8) { return hexBuf(sha256u8(u8)); }
+function hmacSha256(keyU8, msgU8) {
+  var block = 64, key = keyU8.length > block ? sha256bytes(keyU8) : keyU8;
+  var kpad = new Uint8Array(block); kpad.set(key);
+  var ipad = new Uint8Array(block), opad = new Uint8Array(block), i;
+  for (i = 0; i < block; i++) { ipad[i] = kpad[i] ^ 0x36; opad[i] = kpad[i] ^ 0x5c; }
+  var inner = new Uint8Array(block + msgU8.length); inner.set(ipad); inner.set(msgU8, block);
+  var ih = sha256bytes(inner);
+  var outer = new Uint8Array(block + ih.length); outer.set(opad); outer.set(ih, block);
+  return sha256bytes(outer);
+}
+function pbkdf2Sync(pin, saltHex, iter) {
+  var pass = new TextEncoder().encode(String(pin)), salt = hexBuf(saltHex);
+  var block = new Uint8Array(salt.length + 4); block.set(salt); block[salt.length + 3] = 1;
+  var u = hmacSha256(pass, block), t = new Uint8Array(u), j, k;
+  for (j = 1; j < iter; j++) { u = hmacSha256(pass, u); for (k = 0; k < 32; k++) t[k] ^= u[k]; }
+  return bufHex(t);
+}
+async function pbkdf2Hex(pin, saltHex, iter) {
+  if (crypto && crypto.subtle) {
+    try { return await pbkdf2Web(pin, saltHex, iter); } catch (e) { /* cai no recurso JS (file://) */ }
+  }
+  return pbkdf2Sync(pin, saltHex, iter);
+}
+async function guardarPin(pin) {
+  var salt = bufHex(crypto.getRandomValues(new Uint8Array(16)));
+  var hash = await pbkdf2Hex(pin, salt, PIN_ITER);
+  localStorage.setItem(CHAVE_PIN, JSON.stringify({ v: 2, alg: "PBKDF2-SHA256", iter: PIN_ITER, salt: salt, hash: hash }));
+}
+async function verificarPin(pin) {
+  var raw = lerPinHash(); if (!raw) return false;
+  var o; try { o = JSON.parse(raw); } catch (e) { return false; }
+  if (!o || o.alg !== "PBKDF2-SHA256" || !o.salt || !o.hash) return false;
+  var h = await pbkdf2Hex(pin, o.salt, o.iter || PIN_ITER);
+  return h === o.hash;
+}
+function lerPinHash() { try { return localStorage.getItem(CHAVE_PIN) || ""; } catch (e) { return ""; } }
+function temPin() { return !!lerPinHash(); }
+function idDispositivo() {
+  try {
+    var id = localStorage.getItem(CHAVE_DEV);
+    if (id) return id;
+    id = (crypto.randomUUID ? crypto.randomUUID() : (Date.now().toString(16) + Math.random().toString(16).slice(2))).replace(/-/g, "").slice(0, 8);
+    localStorage.setItem(CHAVE_DEV, id);
+    return id;
+  } catch (e) { return "local"; }
+}
+function novo_id(pre) {
+  var u = (crypto.randomUUID ? crypto.randomUUID() : (Date.now().toString(16) + Math.random().toString(16).slice(2))).replace(/-/g, "");
+  return pre + "-" + idDispositivo() + "-" + u.slice(0, 12);
+}
+function payloadAud(e, prev) { return [e.ts || "", e.modo || "", e.acao || "", e.entidade || "", e.detalhe || "", prev || ""].join("\n"); }
+function hashAud(e, prev) { return sha256hex(payloadAud(e, prev)); }
+function verificarCadeiaAud(lista, ancoras) {
+  var hashes = {}, partidas = [];
+  (lista || []).forEach(function (e) { if (e.hash) hashes[e.hash] = 1; });
+  (ancoras != null ? ancoras : AUD_ANCORA).forEach(function (h) { if (h) hashes[h] = 1; });
+  (lista || []).forEach(function (e, i) {
+    var prev = e.prev || "";
+    if (e.hash !== hashAud(e, prev)) partidas.push({ indice: i, motivo: "hash_invalido" });
+    else if (prev && !hashes[prev]) partidas.push({ indice: i, motivo: "prev_ausente" });
+  });
+  return { ok: !partidas.length, partidas: partidas };
+}
+function avisoCadeiaAud() {
+  var ver = verificarCadeiaAud(AUD, AUD_ANCORA);
+  if (ver.ok) return "";
+  return '<div class="msg e" id="d-aud-aviso">A cadeia de auditoria está partida (' + ver.partidas.length + (ver.partidas.length === 1 ? " entrada" : " entradas") + "). O histórico pode ter sido editado neste dispositivo ou no pacote importado.</div>";
+}
+var P, RES, AUD = [], AUD_ANCORA = [], CHAVE_AUD_ANCORA = "bh_audit_ancora_v1", estado = { col: null, sem: null, prop: null, tab: "registo", gestor: !temPin() };
+function $(id) { return document.getElementById(id); }
+function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+function hojeISO() { var d = new Date(); return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2); }
+function agoraHM() { var d = new Date(); return ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2); }
+function agoraISO() { var d = new Date(); return hojeISO() + "T" + agoraHM() + ":" + ("0" + d.getSeconds()).slice(-2); }
+function rot(map, k) { return map[k] || k || ""; }
+function toast(t) { var e = $("toast"); e.textContent = t; e.style.display = "block"; clearTimeout(toast.t); toast.t = setTimeout(function () { e.style.display = "none"; }, 3200); }
+function clone(o) { return JSON.parse(JSON.stringify(o)); }
+function carregarAuditoria() { try { var t = localStorage.getItem(CHAVE_AUD); if (t) return JSON.parse(t); } catch (e) {} return []; }
+function carregarAncoras() { try { var t = localStorage.getItem(CHAVE_AUD_ANCORA); if (t) return JSON.parse(t); } catch (e) {} return []; }
+function gravarAuditoria() {
+  try { localStorage.setItem(CHAVE_AUD, JSON.stringify(AUD)); } catch (e) {}
+  try { localStorage.setItem(CHAVE_AUD_ANCORA, JSON.stringify(AUD_ANCORA || [])); } catch (e) {}
+}
+function cortarAuditoria(limite) {
+  var r = (window.MotorBH && MotorBH.ancoras_apos_corte)
+    ? MotorBH.ancoras_apos_corte(AUD, limite == null ? 500 : limite, AUD_ANCORA)
+    : { lista: AUD, ancoras: AUD_ANCORA };
+  AUD = r.lista;
+  AUD_ANCORA = r.ancoras || [];
+}
+function registarAuditoria(acao, entidade, detalhe) {
+  var prev = AUD.length ? (AUD[AUD.length - 1].hash || "") : "";
+  var e = { ts: agoraISO(), modo: estado.gestor ? "gestor" : "colaborador", acao: acao, entidade: entidade || "", detalhe: detalhe || "", prev: prev };
+  e.hash = hashAud(e, prev);
+  AUD.push(e);
+  if (AUD.length > 500) cortarAuditoria(500);
+  gravarAuditoria();
+}
+function carregar() { try { var t = localStorage.getItem(CHAVE); if (t) return JSON.parse(t); } catch (e) {} return clone(EXEMPLO); }
+function guardar() { try { localStorage.setItem(CHAVE, JSON.stringify(P)); } catch (e) { toast("Não foi possível guardar no iPad: " + e.message); } }
+function recalcular() { RES = M.calcular(P); }
+function colab(id) { return P.colaboradores.filter(function (c) { return c.id === id; })[0]; }
+function nomeEq(id) { var e = P.equipas.filter(function (x) { return x.id === id; })[0]; return e ? e.nome : id; }
+function ativos() { return P.colaboradores.filter(function (c) { return M.norm_colab(c).ativo; }); }
+function opcoesEq(sel, todas) { $(sel).innerHTML = (todas ? '<option value="">Todas as equipas</option>' : "") + P.equipas.map(function (e) { return '<option value="' + esc(e.id) + '">' + esc(e.nome) + "</option>"; }).join(""); }
+function opcoesCol(sel) { $(sel).innerHTML = ativos().map(function (c) { return '<option value="' + esc(c.id) + '">' + esc(c.nome) + " (" + esc(c.equipa) + ")</option>"; }).join(""); }
+function proximo_id(lin, pre, w) { var n = 0; lin.forEach(function (l) { var i = String(l.id || ""); if (i.indexOf(pre) === 0 && /^\d+$/.test(i.slice(pre.length))) n = Math.max(n, parseInt(i.slice(pre.length), 10)); }); var s = String(n + 1); while (s.length < w) s = "0" + s; return pre + s; }
+function tagNivel(n) { return '<span class="tag ' + n + '">' + ({ violacao: "Violação", aviso: "Aviso", info: "Info" }[n] || n) + "</span>"; }
+function alertaHTML(a) {
+  var c = colab(a.colaborador_id);
+  var sensFam = !estado.gestor && (a.regra === "banco_excecao_parental" || a.regra === "banco_excecao_parental_3_6");
+  var sensEur = !estado.gestor && (a.regra === "valor_hora_abaixo_minimo" || a.regra === "retribuicao_isencao_horario" || /€|valor hora/i.test(a.mensagem || ""));
+  var msg = sensFam ? "Restrição legal de banco de horas (dados familiares reservados ao modo gestor)." : (sensEur ? "Indicador remuneratório reservado ao modo gestor." : a.mensagem);
+  return '<div class="al ' + a.nivel + '">' + tagNivel(a.nivel) + " <b>" + esc(c ? c.nome : a.colaborador_id) + "</b> · " + esc(a.data) + "<div>" + esc(msg) + '</div><div class="m">' + esc(a.artigo) + " · origem: " + esc(rot(ROT_ORIG, a.origem)) + "</div></div>";
+}
+function baixar(nome, conteudo, tipo) { var b = new Blob([conteudo], { type: tipo }); var a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500); }
+function csvDe(linhas, cols) { function q(x) { x = x == null ? "" : String(x); return /[",\n;]/.test(x) ? '"' + x.replace(/"/g, '""') + '"' : x; } return [cols.join(",")].concat(linhas.map(function (l) { return cols.map(function (c) { return q(l[c]); }).join(","); })).join("\r\n") + "\r\n"; }
+function lerCSV(txt) {
+  txt = txt.replace(/^\uFEFF/, ""); var rows = [], row = [], cur = "", q = false;
+  for (var i = 0; i < txt.length; i++) { var ch = txt[i];
+    if (q) { if (ch === '"') { if (txt[i + 1] === '"') { cur += '"'; i++; } else q = false; } else cur += ch; }
+    else if (ch === '"') q = true; else if (ch === ",") { row.push(cur); cur = ""; } else if (ch === "\n" || ch === "\r") { if (ch === "\r" && txt[i + 1] === "\n") i++; row.push(cur); rows.push(row); row = []; cur = ""; } else cur += ch; }
+  if (cur !== "" || row.length) { row.push(cur); rows.push(row); }
+  rows = rows.filter(function (r) { return r.some(function (x) { return x.trim() !== ""; }); });
+  var cab = rows.shift().map(function (h) { return h.trim(); });
+  return rows.map(function (r) { var o = {}; cab.forEach(function (h, i) { o[h] = (r[i] || "").trim(); }); return o; });
+}
+function classeTurno(t) { if (!t) return ""; if (t === "DO" || t === "DC" || t === "LV") return t; if (t === "AUS") return "A"; var u = t.slice(-1); return ({ M: "M", T: "T", N: "N", P: "P" })[u] || "M"; }
+
+// ---------------- separadores
+document.querySelectorAll("#tabs button").forEach(function (b) {
+  b.addEventListener("click", function () { mostrar(b.getAttribute("data-t")); });
+});
+function mostrar(t) {
+  estado.tab = t;
+  document.querySelectorAll("#tabs button").forEach(function (x) { x.classList.toggle("on", x.getAttribute("data-t") === t); });
+  document.querySelectorAll("main section").forEach(function (s) { s.classList.toggle("on", s.id === "s-" + t); });
+  render();
+}
+function aplicarRestricoes() {
+  var g = estado.gestor;
+  function bloquear(el, off) { if (el) el.disabled = !!off; }
+  bloquear($("d-json"), !g); bloquear($("d-reset"), !g); bloquear($("d-file"), !g); bloquear($("d-res"), !g);
+  bloquear($("rel-csv"), !g); bloquear($("rel-res"), !g);
+  if ($("d-file-lbl")) $("d-file-lbl").style.opacity = !g ? ".4" : "1";
+  document.querySelectorAll("[data-csv]").forEach(function (b) { b.disabled = !g; });
+}
+function render() {
+  var n = { violacao: 0, aviso: 0 }; RES.alertas.forEach(function (a) { n[a.nivel] = (n[a.nivel] || 0) + 1; });
+  $("hdr").textContent = "Dados até " + (RES.meta.ate || "-") + " · " + n.violacao + " violações · " + n.aviso + " avisos";
+  var hb = $("hdr-modo");
+  if (estado.gestor) { hb.textContent = temPin() ? "Gestor (bloquear)" : "Vista restrita"; hb.className = "pin-btn"; }
+  else { hb.textContent = "Vista restrita · Desbloquear"; hb.className = "pin-btn restr"; }
+  aplicarRestricoes();
+  ({ registo: rRegisto, escala: rEscala, saldos: rSaldos, alertas: rAlertas, relatorio: rRelatorio, ausencias: rAusencias, dados: rDados })[estado.tab]();
+}
+
+// ---------------- REGISTO
+function registoAberto(cid) { var hoje = hojeISO(); var ab = P.registos.filter(function (r) { return r.colaborador_id === cid && !r.saida; }); return ab.length ? ab[ab.length - 1] : null; }
+function pausaAberta(r) { return r && /-$/.test(String(r.pausas || "").trim()); }
+function rRegisto() {
+  var eq = $("r-eq").value || (P.equipas[0] || {}).id;
+  $("r-pessoas").innerHTML = ativos().filter(function (c) { return c.equipa === eq; }).map(function (c) {
+    return '<button class="pessoa' + (estado.col === c.id ? " on" : "") + (registoAberto(c.id) ? " dentro" : "") + '" data-c="' + esc(c.id) + '">' + esc(c.nome) + "<small>" + esc(c.funcao || "") + "</small></button>";
+  }).join("");
+  document.querySelectorAll("#r-pessoas .pessoa").forEach(function (b) { b.onclick = function () { estado.col = b.getAttribute("data-c"); $("r-msg").innerHTML = ""; $("m-msg").innerHTML = ""; rRegisto(); }; });
+  var c = estado.col ? colab(estado.col) : null;
+  $("r-nome").textContent = c ? c.nome : "Escolha um colaborador";
+  var ab = c ? registoAberto(c.id) : null;
+  $("r-estado").textContent = !c ? "" : ab ? ("Entrou às " + ab.entrada + " de " + ab.data + (pausaAberta(ab) ? " · em pausa" : "")) : "Fora de serviço";
+  $("r-entrar").disabled = !c || !!ab; $("r-sair").disabled = !c || !ab || pausaAberta(ab); $("r-pausa").disabled = !c || !ab;
+  $("r-pausa").textContent = pausaAberta(ab) ? "Terminar pausa" : "Iniciar pausa";
+  if (!$("m-data").value) $("m-data").value = hojeISO();
+  var regs = c ? P.registos.filter(function (r) { return r.colaborador_id === c.id; }).slice(-10).reverse() : [];
+  var porDia = {}; RES.dias.forEach(function (d) { if (c && d.c === c.id) porDia[d.data] = d; });
+  $("r-lista").innerHTML = "<tr><th>Data</th><th>Entrada</th><th>Saída</th><th>Pausas</th><th class=n>Trabalhado</th><th class=n>Suplementar</th><th class=n>Noturno</th><th>Origem</th></tr>" + regs.map(function (r) {
+    var d = porDia[r.data] || {};
+    return "<tr><td>" + esc(r.data) + "</td><td>" + esc(r.entrada) + "</td><td>" + esc(r.saida || "em aberto") + "</td><td>" + esc(r.pausas) + "</td><td class=n>" + (d.trab != null ? M.fmt_min(d.trab) : "") + "</td><td class=n>" + (d.sup ? M.fmt_min(d.sup) : "") + "</td><td class=n>" + (d.noct ? M.fmt_min(d.noct) : "") + "</td><td>" + esc(rot(ROT_ORIG, r.origem)) + "</td></tr>";
+  }).join("");
+}
+$("r-eq").onchange = function () { estado.col = null; rRegisto(); };
+setInterval(function () { $("r-hora").textContent = agoraHM(); }, 1000);
+$("r-entrar").onclick = function () {
+  var ag = agoraISO(), r = { id: novo_id("R"), colaborador_id: estado.col, data: hojeISO(), entrada: agoraHM(), saida: "", pausas: "", motivo_suplementar: "", origem: "ipad", registado_em: ag.slice(0, 16), nota: "", updated_at: ag };
+  P.registos.push(r); registarAuditoria("registar_entrada", r.id, estado.col + " às " + r.entrada); guardar(); recalcular(); toast("Entrada registada às " + r.entrada); render();
+};
+$("r-pausa").onclick = function () {
+  var r = registoAberto(estado.col); if (!r) return;
+  var p = String(r.pausas || "").trim();
+  if (pausaAberta(r)) {
+    var ini = p.split(";").pop().replace("-", "");
+    if (ini === agoraHM()) r.pausas = p.split(";").slice(0, -1).join(";"); // pausa de 0 minutos: anulada
+    else r.pausas = p + agoraHM();
+  } else r.pausas = (p ? p + ";" : "") + agoraHM() + "-";
+  r.updated_at = agoraISO(); registarAuditoria(pausaAberta(r) ? "iniciar_pausa" : "terminar_pausa", r.id, estado.col + " " + r.pausas);
+  guardar(); toast(pausaAberta(r) ? "Pausa iniciada" : "Pausa terminada"); render();
+};
+$("r-sair").onclick = function () {
+  var r = registoAberto(estado.col); if (!r) return;
+  var teste = clone(r); teste.saida = agoraHM();
+  if (teste.saida === r.entrada && teste.data === hojeISO()) { $("r-msg").innerHTML = '<div class="msg e">A saída não pode ser no mesmo minuto da entrada. Se a entrada foi engano, corrija-a no registo manual.</div>'; return; }
+  var outros = clone(P); outros.registos = P.registos.filter(function (x) { return x !== r; });
+  var v = M.validar_registo(outros, teste, hojeISO());
+  if (v.erros.length) { $("r-msg").innerHTML = '<div class="msg e">' + v.erros.map(esc).join("<br>") + "</div>"; return; }
+  var ag = agoraISO(); r.saida = teste.saida; r.registado_em = ag.slice(0, 16); r.updated_at = ag;
+  registarAuditoria("registar_saida", r.id, estado.col + " às " + r.saida); guardar(); recalcular();
+  var p = M.construir_periodo(M.dia_idx(r.data), r.entrada, r.saida, r.pausas);
+  $("r-msg").innerHTML = '<div class="msg o">Saída às ' + r.saida + ": " + M.fmt_min(p.trab) + " trabalhadas.</div>" + v.novos.map(alertaHTML).join("");
+  render();
+};
+function regManual() { return { colaborador_id: estado.col, data: $("m-data").value, entrada: $("m-ent").value, saida: $("m-sai").value, pausas: $("m-pau").value.trim(), motivo_suplementar: $("m-mot").value, origem: "ipad_manual", nota: "" }; }
+function verificarManual() {
+  if (!estado.col) { $("m-msg").innerHTML = '<div class="msg e">Escolha primeiro o colaborador.</div>'; return null; }
+  var r = regManual(), v = M.validar_registo(P, r, hojeISO());
+  if (v.erros.length) { $("m-msg").innerHTML = '<div class="msg e">' + v.erros.map(esc).join("<br>") + "</div>"; return null; }
+  var p = M.construir_periodo(M.dia_idx(r.data), r.entrada, r.saida, r.pausas);
+  var limH = M.v(P.regras, "descansos", "max_trabalho_consecutivo_h");
+  var aviso = (!r.pausas && p.trab > Math.trunc(limH * 60)) ? '<div class="msg w">Mais de ' + esc(limH) + ' h sem pausa: confirme se houve intervalo (art. 213.º n.º 1).</div>' : "";
+  $("m-msg").innerHTML = '<div class="msg o">Válido: ' + M.fmt_min(p.trab) + " trabalhadas, " + M.fmt_min(M.minutos_noturnos(p.segs, M.hm(M.v(P.regras, "trabalho_noturno", "inicio")), M.hm(M.v(P.regras, "trabalho_noturno", "fim")))) + " noturnas. Alertas novos: " + v.novos.length + "</div>" + aviso + v.novos.map(alertaHTML).join("");
+  return r;
+}
+$("m-val").onclick = verificarManual;
+$("m-grv").onclick = function () { var r = verificarManual(); if (!r) return; var ag = agoraISO(); r.id = novo_id("R"); r.registado_em = ag.slice(0, 16); r.updated_at = ag; P.registos.push(r); registarAuditoria("registar_manual", r.id, r.colaborador_id + " " + r.data + " " + r.entrada + "-" + r.saida); guardar(); recalcular(); toast("Registo " + r.id + " gravado"); render(); };
+
+// ---------------- ESCALA
+function semanaAtual() { if (!estado.sem) estado.sem = M.idx_dia(M.segunda(M.dia_idx(hojeISO()))); return estado.sem; }
+function linhaEscala(cid, d) { for (var i = P.escala.length - 1; i >= 0; i--) { var e = P.escala[i]; if (e.colaborador_id === cid && e.data === d) return e; } return null; }
+function ausenteDia(cid, d) { return P.ausencias.filter(function (a) { return a.colaborador_id === cid && a.inicio <= d && d <= (a.fim || a.inicio) && !a.horas; })[0]; }
+function rEscala() {
+  var w = M.dia_idx(semanaAtual()), eq = $("e-eq").value || P.equipas[0].id;
+  $("e-sem").value = semanaAtual();
+  var fer = M.feriados_ano(+semanaAtual().slice(0, 4), P.regras), dias = [];
+  for (var k = 0; k < 7; k++) dias.push(M.idx_dia(w + k));
+  var prop = estado.prop && estado.prop.eq === eq && estado.prop.sem === semanaAtual() ? estado.prop : null, pmap = {};
+  if (prop) prop.linhas.forEach(function (l) { pmap[l.colaborador_id + "|" + l.data] = l.turno_id; });
+  var membros = ativos().filter(function (c) { return c.equipa === eq; });
+  var html = "<tr><th>Colaborador</th>" + dias.map(function (d, i) { var f = fer[M.dia_idx(d)]; return '<th style="text-align:center">' + M.DIAS_PT[i] + " " + d.slice(8) + "/" + d.slice(5, 7) + (f ? '<br><span class="tag info" title="' + esc(f) + '">feriado</span>' : "") + "</th>"; }).join("") + "<th class=n>Horas</th></tr>";
+  membros.forEach(function (c) {
+    var tot = 0;
+    html += "<tr><td><b>" + esc(c.nome) + '</b><br><span class="mut">' + esc(c.funcao || "") + "</span></td>";
+    dias.forEach(function (d) {
+      var au = ausenteDia(c.id, d), e = linhaEscala(c.id, d), t = e ? e.turno_id : "", mudou = false;
+      if (prop && pmap[c.id + "|" + d] !== undefined) { mudou = pmap[c.id + "|" + d] !== t; t = pmap[c.id + "|" + d]; }
+      if (au) { var auTit = !estado.gestor && (au.tipo === "baixa" || au.tipo === "licenca_parental") ? "Ausência reservada" : rot(ROT_AUS, au.tipo); var auCod = !estado.gestor && (au.tipo === "baixa" || au.tipo === "licenca_parental") ? "RES" : au.tipo.slice(0, 3).toUpperCase(); html += '<td class="t"><button class="cel A" disabled title="' + esc(auTit) + '">' + esc(auCod) + "</button></td>"; return; }
+      var tt = P.turnos[t], expl = !mudou && e && e.inicio && e.fim;
+      if (expl) tot += M.construir_periodo(0, e.inicio, e.fim, e.pausas || "").trab;
+      else if (tt) tot += M.construir_periodo(0, tt.inicio, tt.fim, (tt.pausas || []).map(function (p) { return p.join("-"); }).join(";")).trab;
+      var celTit = expl ? ((tt ? tt.nome + " " : "") + e.inicio + "-" + e.fim) : (tt ? tt.nome + " " + tt.inicio + "-" + tt.fim : t);
+      html += '<td class="t"><button class="cel ' + classeTurno(t) + (mudou ? " ch" : "") + '" data-c="' + esc(c.id) + '" data-d="' + d + '" title="' + esc(celTit) + '">' + esc(t || "·") + (expl ? "*" : "") + "</button></td>";
+    });
+    html += "<td class=n>" + M.fmt_min(tot) + "</td></tr>";
+  });
+  $("e-grid").innerHTML = html;
+  document.querySelectorAll("#e-grid .cel[data-c]").forEach(function (b) { b.onclick = function () { mudarCelula(b.getAttribute("data-c"), b.getAttribute("data-d")); }; });
+  var al = M.validar_escala(P, P.escala.filter(function (e) { return e.data >= dias[0] && e.data <= dias[6]; }));
+  var ids = {}; membros.forEach(function (c) { ids[c.id] = 1; }); ids[eq] = 1;
+  al = al.filter(function (a) { return ids[a.colaborador_id]; });
+  $("e-al").innerHTML = al.length ? al.map(alertaHTML).join("") : '<span class="tag ok">Sem alertas nesta semana</span>';
+  $("e-prop-box").style.display = prop ? "block" : "none";
+  if (prop) $("e-prop-info").innerHTML = "<p>" + prop.linhas.length + " linhas propostas (assinaladas a amarelo quando diferentes da escala atual). Turnos por preencher: " + prop.faltas.length + ". Alertas da proposta: " + prop.alertas.length + ".</p>" + prop.faltas.map(function (f) { return '<div class="msg w">Por preencher: ' + esc(f.data) + " turno " + esc(f.turno) + "</div>"; }).join("") + prop.alertas.map(alertaHTML).join("");
+}
+function mudarCelula(cid, d) {
+  var c = colab(cid), eqo = P.equipas.filter(function (e) { return e.id === c.equipa; })[0];
+  var ops = (eqo && eqo.turnos ? eqo.turnos : Object.keys(P.turnos)).concat(["DO", "DC", "LV"]);
+  var e = linhaEscala(cid, d), atual = e ? e.turno_id : "", prox = ops[(ops.indexOf(atual) + 1) % ops.length], ag = agoraISO();
+  if (e) { e.turno_id = prox; e.inicio = ""; e.fim = ""; e.pausas = ""; e.afixada_em = hojeISO(); e.origem = "ipad"; e.updated_at = ag; }
+  else P.escala.push({ data: d, colaborador_id: cid, turno_id: prox, inicio: "", fim: "", pausas: "", afixada_em: hojeISO(), origem: "ipad", updated_at: ag });
+  registarAuditoria("editar_escala", cid + "|" + d, (atual || "-") + " -> " + prox);
+  estado.prop = null; guardar(); recalcular(); rEscala();
+}
+$("e-ant").onclick = function () { estado.sem = M.idx_dia(M.dia_idx(semanaAtual()) - 7); estado.prop = null; rEscala(); };
+$("e-seg").onclick = function () { estado.sem = M.idx_dia(M.dia_idx(semanaAtual()) + 7); estado.prop = null; rEscala(); };
+$("e-sem").onchange = function () { if ($("e-sem").value) { estado.sem = M.idx_dia(M.segunda(M.dia_idx($("e-sem").value))); estado.prop = null; rEscala(); } };
+$("e-eq").onchange = function () { estado.prop = null; rEscala(); };
+$("e-val").onclick = function () { rEscala(); toast("Semana validada"); };
+$("e-prop").onclick = function () {
+  var eq = $("e-eq").value || P.equipas[0].id, eo = P.equipas.filter(function (e) { return e.id === eq; })[0];
+  if (!eo.cobertura || !Object.keys(eo.cobertura).length) { toast("Esta equipa tem horário fixo: não há cobertura para propor."); return; }
+  var r = M.propor_escala(P, semanaAtual(), eq, hojeISO());
+  estado.prop = { eq: eq, sem: semanaAtual(), linhas: r.linhas, faltas: r.faltas, alertas: M.validar_escala(P, r.linhas) };
+  rEscala();
+};
+$("e-aplicar").onclick = function () {
+  var pr = estado.prop; if (!pr) return;
+  var viol = pr.alertas.filter(function (a) { return a.nivel === "violacao"; });
+  if (viol.length && !confirm("A proposta tem " + viol.length + " violações. Aplicar mesmo assim?")) return;
+  var datas = {}, cs = {}, ag = agoraISO(); pr.linhas.forEach(function (l) { datas[l.data] = 1; cs[l.colaborador_id] = 1; l.updated_at = ag; });
+  P.escala = P.escala.filter(function (e) { return !(datas[e.data] && cs[e.colaborador_id]); }).concat(pr.linhas);
+  registarAuditoria("aplicar_proposta_escala", pr.eq + "|" + pr.sem, pr.linhas.length + " linhas");
+  P.escala.sort(function (a, b) { return a.data < b.data ? -1 : a.data > b.data ? 1 : a.colaborador_id < b.colaborador_id ? -1 : 1; });
+  estado.prop = null; guardar(); recalcular(); toast("Proposta aplicada"); rEscala();
+};
+$("e-descartar").onclick = function () { estado.prop = null; rEscala(); };
+
+// ---------------- SALDOS
+function rSaldos() {
+  var eq = $("sa-eq").value, cs = RES.colaboradores.filter(function (c) { return !eq || c.equipa === eq; });
+  var tot = 0, venc = 0, neg = 0, sup = 0; cs.forEach(function (c) { tot += c.banco.saldo; venc += c.banco.a_vencer_30; if (c.banco.divida > 0) neg++; sup += c.totais.sup_ano; });
+  $("k-saldos").innerHTML = '<div class="kpi"><b>' + M.fmt_min(tot) + '</b><span>Saldo total do banco</span></div><div class="kpi"><b>' + M.fmt_min(venc) + '</b><span>A vencer em 30 dias</span></div><div class="kpi"><b>' + neg + '</b><span>Pessoas com saldo negativo</span></div><div class="kpi"><b>' + M.fmt_min(sup) + "</b><span>Suplementar no ano</span></div>";
+  $("sa-t").innerHTML = "<tr><th>Colaborador</th><th>Equipa</th><th>Banco</th><th class=n>Saldo</th><th class=n>Crédito</th><th class=n>Compensado</th><th class=n>Pago</th><th class=n>Vence 30 d</th><th>Próx. vencimento</th><th class=n>Banco no ano</th><th class=n>Suplementar ano / limite</th><th class=n>Média semanal</th></tr>" + cs.map(function (c) {
+    var b = c.banco, t = c.totais;
+    return "<tr><td><b>" + esc(c.nome) + "</b></td><td>" + esc(c.equipa) + "</td><td>" + (c.banco_ativo ? '<span class="tag ok">sim</span>' : '<span class="tag">não</span>') + "</td><td class=n><b style=\"color:" + (b.saldo < 0 ? "var(--vio)" : "inherit") + '">' + M.fmt_min(b.saldo) + "</b></td><td class=n>" + M.fmt_min(b.credito) + "</td><td class=n>" + M.fmt_min(b.debito) + "</td><td class=n>" + M.fmt_min(b.pago) + "</td><td class=n>" + (b.a_vencer_30 ? '<span class="tag aviso">' + M.fmt_min(b.a_vencer_30) + "</span>" : "0:00") + "</td><td>" + esc(b.proximo_vencimento) + "</td><td class=n>" + M.fmt_min(t.banco_ano) + " / " + M.fmt_min(t.banco_ano_limite) + "</td><td class=n>" + M.fmt_min(t.sup_ano) + " / " + M.fmt_min(t.sup_ano_limite) + "</td><td class=n>" + M.fmt_min(t.media_semanal) + "</td></tr>";
+  }).join("");
+}
+$("sa-eq").onchange = rSaldos;
+
+// ---------------- ALERTAS
+function rAlertas() {
+  var niv = $("al-niv").value, eq = $("al-eq").value, orig = $("al-orig").value;
+  var lst = RES.alertas.filter(function (a) { var c = colab(a.colaborador_id); var e = c ? c.equipa : a.colaborador_id; return (!niv || a.nivel === niv) && (!eq || e === eq) && (!orig || a.origem === orig); });
+  var n = { violacao: 0, aviso: 0, info: 0 }; lst.forEach(function (a) { n[a.nivel]++; });
+  $("k-al").innerHTML = '<div class="kpi"><b style="color:var(--vio)">' + n.violacao + '</b><span>Violações</span></div><div class="kpi"><b style="color:var(--avi)">' + n.aviso + '</b><span>Avisos</span></div><div class="kpi"><b style="color:var(--inf)">' + n.info + "</b><span>Informação</span></div>";
+  var ord = { violacao: 0, aviso: 1, info: 2 };
+  lst = lst.slice().sort(function (a, b) { return ord[a.nivel] - ord[b.nivel] || (a.data < b.data ? 1 : a.data > b.data ? -1 : 0); });
+  $("al-lista").innerHTML = lst.length ? lst.map(alertaHTML).join("") : '<span class="tag ok">Sem alertas</span>';
+}
+["al-niv", "al-eq", "al-orig"].forEach(function (i) { $(i).onchange = rAlertas; });
+
+// ---------------- RELATÓRIO
+function rRelatorio() {
+  if (!$("rel-mes").value) $("rel-mes").value = (RES.meta.ate || hojeISO()).slice(0, 7);
+  if (!RES.colaboradores.length) { $("rel-out").innerHTML = '<p class="mut">Ainda não há colaboradores ou registos. Importe os dados no separador Dados.</p>'; return; }
+  if (!$("rel-col").value) $("rel-col").value = RES.colaboradores[0].id;
+  var mes = $("rel-mes").value, cid = $("rel-col").value, r = M.resumo_mensal(P, RES, mes, cid), s = r.resumo;
+  var rots = [["horas_trabalhadas", "Horas trabalhadas"], ["horas_normais", "Horas normais"], ["suplementar", "Trabalho suplementar"], ["noturno", "Trabalho noturno (22h às 7h)"], ["banco_credito", "Banco: crédito no mês"], ["banco_debito", "Banco: compensação gozada"], ["saldo_banco_atual", "Banco: saldo atual"], ["tolerancias", "Tolerâncias de 15 min"], ["faltas_nao_justificadas", "Ausências não justificadas"], ["descanso_compensatorio_feriado", "Descanso compensatório por feriado"], ["valor_suplementar_eur", "Valor do suplementar com acréscimos (€)"], ["acrescimo_noturno_eur", "Acréscimo noturno (€)"], ["acrescimo_feriado_eur", "Acréscimo feriado normal (€)"], ["retribuicao_isencao_eur", "Retribuição específica da isenção (art. 265.º) (€)"], ["violacoes", "Violações"], ["avisos", "Avisos"]];
+  var h = "<h2>Relatório mensal " + esc(mes) + ": " + esc(s.nome) + " (" + esc(cid) + ")</h2><p class=mut>Equipa " + esc(nomeEq(s.equipa)) + ". Calculado no iPad com o mesmo motor do motor.py, registos até " + esc(RES.meta.ate) + ".</p>";
+  h += '<div class="tw"><table><tr><th>Indicador</th><th class=n>Valor</th></tr>' + rots.map(function (x) {
+    var v = s[x[0]], ehEur = x[0].indexOf("_eur") > 0;
+    var txt = (ehEur && !estado.gestor) ? "Reservado (modo gestor)" : (v === null ? "n/d" : typeof v === "number" && ehEur ? v.toFixed(2) : esc(v));
+    return "<tr><td>" + x[1] + "</td><td class=n>" + txt + "</td></tr>";
+  }).join("") + "</table></div>";
+  h += '<h2 style="margin-top:16px">Dia a dia</h2><div class="tw"><table><tr><th>Data</th><th>Tipo</th><th>Turno</th><th class=n>Previsto</th><th class=n>Trabalhado</th><th class=n>Normal</th><th class=n>Suplementar</th><th class=n>Noturno</th><th class=n>Banco +</th><th class=n>Banco −</th><th class=n>Falta</th></tr>' + r.dias.map(function (d) {
+    var subRot = d.sub ? (!estado.gestor && (d.sub === "baixa" || d.sub === "licenca_parental") ? "reservada" : (ROT_AUS[d.sub] || d.sub)) : "";
+    return "<tr><td>" + d.data + "</td><td>" + esc(rot(ROT_DIA, d.tipo) + (subRot ? " (" + subRot + ")" : "")) + "</td><td>" + esc(d.turno) + "</td><td class=n>" + M.fmt_min(d.esperado) + "</td><td class=n>" + M.fmt_min(d.trab) + "</td><td class=n>" + M.fmt_min(d.normal) + "</td><td class=n>" + M.fmt_min(d.sup) + "</td><td class=n>" + M.fmt_min(d.noct) + "</td><td class=n>" + M.fmt_min(d.credito) + "</td><td class=n>" + M.fmt_min(d.debito) + "</td><td class=n>" + M.fmt_min(d.falta) + "</td></tr>";
+  }).join("") + "</table></div>";
+  if (r.alertas.length) h += '<h2 style="margin-top:16px">Alertas</h2>' + r.alertas.map(alertaHTML).join("");
+  h += '<p class="mut" style="margin-top:24px">Registo conservado 5 anos (CT art. 202.º n.º 4). Assinatura do trabalhador: ____________________ Data: ____/____/______</p>';
+  $("rel-out").innerHTML = h;
+}
+$("rel-mes").onchange = rRelatorio; $("rel-col").onchange = rRelatorio;
+$("rel-imp").onclick = function () { $("s-relatorio").classList.add("imp"); window.print(); setTimeout(function () { $("s-relatorio").classList.remove("imp"); }, 500); };
+function exigirGestor(msg) {
+  if (estado.gestor) return true;
+  if (temPin()) abrirModalPin();
+  else toast(msg || "Vista restrita: esta ação só está disponível em modo gestor.");
+  return false;
+}
+$("rel-csv").onclick = function () {
+  if (!exigirGestor()) return;
+  var r = M.resumo_mensal(P, RES, $("rel-mes").value, $("rel-col").value);
+  baixar($("rel-col").value + "-" + $("rel-mes").value + ".csv", csvDe(r.dias.map(function (d) { return { data: d.data, tipo: d.tipo, sub: d.sub, turno: d.turno, previsto_min: d.esperado, trabalhado_min: d.trab, normal_min: d.normal, suplementar_min: d.sup, noturno_min: d.noct, banco_credito_min: d.credito, banco_debito_min: d.debito, tolerancia_min: d.tol, falta_min: d.falta }; }), ["data", "tipo", "sub", "turno", "previsto_min", "trabalhado_min", "normal_min", "suplementar_min", "noturno_min", "banco_credito_min", "banco_debito_min", "tolerancia_min", "falta_min"]), "text/csv");
+};
+$("rel-res").onclick = function () {
+  if (!exigirGestor()) return;
+  if (!RES.colaboradores.length) return;
+  var mes = $("rel-mes").value, rs = RES.colaboradores.map(function (c) {
+    var o = clone(M.resumo_mensal(P, RES, mes, c.id).resumo);
+    if (!estado.gestor) { delete o.valor_suplementar_eur; delete o.acrescimo_noturno_eur; delete o.acrescimo_feriado_eur; }
+    return o;
+  });
+  baixar("resumo-" + mes + ".csv", csvDe(rs, Object.keys(rs[0])), "text/csv");
+};
+
+// ---------------- AUSÊNCIAS E BANCO
+function rAusencias() {
+  if (!$("au-ini").value) { $("au-ini").value = hojeISO(); $("au-fim").value = hojeISO(); $("mv-data").value = hojeISO(); }
+  $("au-t").innerHTML = "<tr><th>Id</th><th>Colaborador</th><th>Início</th><th>Fim</th><th>Tipo</th><th class=n>Horas</th><th>Nota</th><th></th></tr>" + P.ausencias.slice().reverse().map(function (a) {
+    var c = colab(a.colaborador_id), sens = !estado.gestor && (a.tipo === "baixa" || a.tipo === "licenca_parental");
+    var tipoTxt = sens ? "Ausência reservada (RGPD)" : rot(ROT_AUS, a.tipo);
+    var notaTxt = sens ? "Reservado" : a.nota;
+    var btn = estado.gestor ? '<button class="b" data-del-au="' + esc(a.id) + '">Apagar</button>' : '<span class="mut">Gestor</span>';
+    return "<tr><td>" + esc(a.id) + "</td><td>" + esc(c ? c.nome : a.colaborador_id) + "</td><td>" + esc(a.inicio) + "</td><td>" + esc(a.fim) + "</td><td>" + esc(tipoTxt) + "</td><td class=n>" + esc(a.horas || "dia") + "</td><td>" + esc(notaTxt) + "</td><td>" + btn + "</td></tr>";
+  }).join("");
+  document.querySelectorAll("[data-del-au]").forEach(function (b) { b.onclick = function () { var id = b.getAttribute("data-del-au"); if (!confirm("Apagar a ausência " + id + "?")) return; P.ausencias = P.ausencias.filter(function (a) { return a.id !== id; }); registarAuditoria("apagar_ausencia", id, ""); guardar(); recalcular(); render(); }; });
+  $("mv-t").innerHTML = "<tr><th>Data</th><th>Colaborador</th><th>Tipo</th><th class=n>Horas</th><th>Origem</th><th>Nota</th></tr>" + RES.movimentos.slice().reverse().map(function (m) { var c = colab(m.colaborador_id); return "<tr><td>" + esc(m.data) + "</td><td>" + esc(c ? c.nome : m.colaborador_id) + "</td><td>" + esc(rot(ROT_MOV, m.tipo)) + "</td><td class=n>" + M.fmt_min(m.min) + "</td><td>" + esc(rot(ROT_ORIG, m.origem)) + "</td><td>" + esc(m.nota) + "</td></tr>"; }).join("");
+}
+$("au-grv").onclick = function () {
+  var a = { id: novo_id("A"), colaborador_id: $("au-col").value, inicio: $("au-ini").value, fim: $("au-fim").value || $("au-ini").value, tipo: $("au-tipo").value, horas: $("au-h").value.trim().replace(",", "."), nota: $("au-nota").value, updated_at: agoraISO() };
+  var e = []; if (!/^\d{4}-\d{2}-\d{2}$/.test(a.inicio)) e.push("Data de início inválida."); if (a.fim < a.inicio) e.push("O fim é anterior ao início."); if (a.horas && !(Number(a.horas) > 0 && Number(a.horas) <= 24)) e.push("Horas inválidas.");
+  if (e.length) { $("au-msg").innerHTML = '<div class="msg e">' + e.join("<br>") + "</div>"; return; }
+  P.ausencias.push(a); registarAuditoria("registar_ausencia", a.id, a.colaborador_id + " " + a.tipo + " " + a.inicio); guardar(); recalcular(); $("au-msg").innerHTML = '<div class="msg o">Ausência ' + a.id + " gravada.</div>"; render();
+};
+$("mv-grv").onclick = function () {
+  var m = { id: novo_id("M"), colaborador_id: $("mv-col").value, data: $("mv-data").value, tipo: $("mv-tipo").value, horas: $("mv-h").value.trim().replace(",", "."), nota: $("mv-nota").value, updated_at: agoraISO() };
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(m.data) || isNaN(Number(m.horas)) || m.horas === "") { $("mv-msg").innerHTML = '<div class="msg e">Indique data e horas (ex.: 2.5).</div>'; return; }
+  P.movimentos_banco.push(m); registarAuditoria("movimento_banco", m.id, m.colaborador_id + " " + m.tipo + " " + m.horas); guardar(); recalcular(); $("mv-msg").innerHTML = '<div class="msg o">Movimento ' + m.id + " gravado.</div>"; render();
+};
+
+// ---------------- DADOS & RGPD
+var ROT_DIM = { micro: "Microempresa", pequena: "Pequena empresa", media: "Média empresa", grande: "Grande empresa" };
+var ROT_REGIME = { nenhum: "Sem banco de horas", irct: "Banco por IRCT", grupal_irct: "Banco grupal (IRCT)", grupal_referendo: "Banco grupal (referendo)" };
+function rDados() {
+  var R = P.regras, lb = M.v(R, "banco_horas", "regime"), dim = M.v(R, "empresa", "dimensao");
+  var g = estado.gestor;
+  $("d-exp-aviso").innerHTML = g ? "" : '<p class="mut" style="margin-top:8px">Vista restrita (RGPD): exportação completa e tabelas sensíveis disponíveis apenas em modo gestor.</p>';
+  $("rgpd-estado").textContent = temPin() ? (g ? "PIN ativo · Modo gestor desbloqueado." : "PIN ativo · Vista restrita (baixas médicas, dados familiares e valor/hora ocultos).") : (g ? "Sem PIN configurado · Modo gestor ativo (pode ativar um PIN ou alternar para vista restrita no topo)." : "Sem PIN configurado · Vista restrita de pré-visualização.");
+  $("rgpd-ctrl").style.display = (g || !temPin()) ? "flex" : "none";
+  $("rgpd-limpar").disabled = !temPin();
+  if (g) {
+    var ult = AUD.slice(-25).reverse();
+    $("d-aud").innerHTML = avisoCadeiaAud() + (ult.length ? '<div class="tw"><table><tr><th>Data/hora</th><th>Modo</th><th>Ação</th><th>Alvo</th><th>Detalhe</th></tr>' + ult.map(function (a) { return "<tr><td>" + esc(a.ts.replace("T", " ")) + "</td><td>" + esc(a.modo) + "</td><td>" + esc(a.acao) + "</td><td>" + esc(a.entidade) + "</td><td>" + esc(a.detalhe) + "</td></tr>"; }).join("") + "</table></div>" : '<p class="mut">Ainda sem alterações registadas neste dispositivo.</p>');
+  } else {
+    $("d-aud").innerHTML = avisoCadeiaAud() + '<p class="mut">Registo de auditoria visível apenas em modo gestor (' + AUD.length + " registos).</p>";
+  }
+  var linhas = [["Dimensão da empresa", ROT_DIM[dim] || dim, R.empresa.dimensao], ["Regime do banco de horas", ROT_REGIME[lb] || lb, R.banco_horas.regime], ["Período normal semanal (h)", M.v(R, "periodo_normal", "max_semanal_h"), R.periodo_normal.max_semanal_h], ["Descanso diário (h)", M.v(R, "descansos", "descanso_diario_min_h"), R.descansos.descanso_diario_min_h], ["Descanso semanal contínuo (h)", M.v(R, "descansos", "descanso_semanal_continuo_min_h"), R.descansos.descanso_semanal_continuo_min_h], ["Trabalho seguido máximo (h)", M.v(R, "descansos", "max_trabalho_consecutivo_h"), R.descansos.max_trabalho_consecutivo_h], ["Noturno", M.v(R, "trabalho_noturno", "inicio") + "–" + M.v(R, "trabalho_noturno", "fim"), R.trabalho_noturno.inicio], ["Prazo de compensação (meses)", M.v(R, "banco_horas", "prazo_compensacao_meses"), R.banco_horas.prazo_compensacao_meses], ["RMMG Açores (€)", M.v(R, "empresa", "rmmg_mensal_eur"), R.empresa.rmmg_mensal_eur]];
+  $("d-regras").innerHTML = '<div class="tw"><table><tr><th>Regra</th><th>Valor</th><th>Artigo</th><th>Estado</th></tr>' + linhas.map(function (l) { return "<tr><td>" + l[0] + "</td><td><b>" + esc(l[1]) + "</b></td><td>" + esc(l[2].artigo || "") + '</td><td><span class="tag ' + (l[2].estado === "CONFIRMADO" ? "ok" : "aviso") + '">' + esc(rot(ROT_EST, l[2].estado || "")) + "</span></td></tr>"; }).join("") + '</table></div><p class="mut">As regras completas (com fontes) estão em regras/regras.json; para as alterar, edite esse ficheiro no computador e importe o pacote. A convenção coletiva aplicável pode alterar estes valores.</p>';
+  $("d-sobre").innerHTML = "Motor v" + esc(M.VERSAO) + " · " + P.colaboradores.length + " colaboradores · " + P.registos.length + " registos · " + P.escala.length + " linhas de escala. Os dados ficam guardados só neste iPad (armazenamento local do Safari). Exporte o pacote JSON regularmente como cópia de segurança. Dados de exemplo: pessoas fictícias.";
+}
+function abrirModalPin() { $("pin-in").value = ""; $("pin-err").innerHTML = ""; $("pin-modal").classList.add("on"); $("pin-in").focus(); }
+function fecharModalPin() { $("pin-modal").classList.remove("on"); }
+$("hdr-modo").onclick = function () {
+  if (estado.gestor) {
+    estado.gestor = false; registarAuditoria("ativar_vista_restrita", "sessao", ""); render(); toast("Vista restrita ativada");
+  } else if (!temPin()) {
+    estado.gestor = true; registarAuditoria("ativar_modo_gestor", "sessao", "sem PIN"); render(); toast("Modo gestor ativado");
+  } else {
+    abrirModalPin();
+  }
+};
+$("pin-cancel").onclick = fecharModalPin;
+$("pin-ok").onclick = async function () {
+  var val = $("pin-in").value.trim();
+  $("pin-ok").disabled = true;
+  try {
+    if (await verificarPin(val)) {
+      pinFalhas = 0;
+      estado.gestor = true; registarAuditoria("desbloquear_gestor", "sessao", "PIN válido"); fecharModalPin(); render(); toast("Modo gestor desbloqueado");
+    } else {
+      pinFalhas += 1;
+      var espera = pinFalhas <= 1 ? 0 : Math.min(8000, 400 * Math.pow(2, pinFalhas - 2));
+      if (espera) await new Promise(function (r) { setTimeout(r, espera); });
+      registarAuditoria("tentativa_pin_falhada", "sessao", String(pinFalhas) + " falhas");
+      $("pin-err").innerHTML = '<div class="msg e">PIN incorreto.</div>';
+    }
+  } catch (err) {
+    $("pin-err").innerHTML = '<div class="msg e">Não foi possível verificar o PIN: ' + esc(err.message) + "</div>";
+  }
+  $("pin-ok").disabled = false;
+};
+$("rgpd-set").onclick = async function () {
+  if (temPin() && !estado.gestor) { abrirModalPin(); return; }
+  var val = $("rgpd-pin").value.trim();
+  if (val.length < 4) { $("rgpd-msg").innerHTML = '<div class="msg e">Indique pelo menos 4 caracteres/dígitos para o PIN.</div>'; return; }
+  try {
+    await guardarPin(val); $("rgpd-pin").value = ""; estado.gestor = true;
+    registarAuditoria("definir_pin", "rgpd", "PIN com PBKDF2-SHA256");
+    $("rgpd-msg").innerHTML = '<div class="msg o">PIN guardado localmente com hash, sal e PBKDF2. Ao abrir a app de novo, entrará em vista restrita até desbloquear. O PIN é só uma barreira local deste dispositivo — não substitui um servidor com autenticação.</div>'; render();
+  } catch (err) {
+    $("rgpd-msg").innerHTML = '<div class="msg e">Não foi possível guardar o PIN: ' + esc(err.message) + "</div>";
+  }
+};
+$("rgpd-limpar").onclick = function () {
+  if (temPin() && !estado.gestor) { abrirModalPin(); return; }
+  localStorage.removeItem(CHAVE_PIN); estado.gestor = true;
+  registarAuditoria("remover_pin", "rgpd", "PIN removido");
+  $("rgpd-msg").innerHTML = '<div class="msg o">PIN removido.</div>'; render();
+};
+$("d-json").onclick = function () {
+  if (!exigirGestor()) return;
+  var out = clone(P); out.auditoria = AUD.slice();
+  baixar("pacote-" + hojeISO() + ".json", JSON.stringify(out, null, 1), "application/json");
+  registarAuditoria("exportar_pacote", "json", P.registos.length + " registos");
+};
+$("d-res").onclick = function () {
+  if (!exigirGestor()) return;
+  baixar("resultados-" + hojeISO() + ".json", JSON.stringify(RES, null, 1), "application/json");
+};
+document.querySelectorAll("[data-csv]").forEach(function (b) {
+  b.onclick = function () {
+    var t = b.getAttribute("data-csv");
+    if (!exigirGestor()) return;
+    baixar(t + ".csv", csvDe(P[t], M.ESQUEMA[t]), "text/csv");
+  };
+});
+$("d-file").onchange = function (ev) {
+  if (!exigirGestor()) { ev.target.value = ""; return; }
+  var f = ev.target.files[0]; if (!f) return;
+  var rd = new FileReader();
+  rd.onload = function () {
+    try {
+      var txt = String(rd.result), recebido = {};
+      if (/\.json$/i.test(f.name) || /^\s*\{/.test(txt)) {
+        var j = JSON.parse(txt); delete j.resultados_motor;
+        ["regras", "equipas", "turnos", "colaboradores", "escala", "registos", "ausencias", "movimentos_banco", "auditoria", "auditoria_ancora"].forEach(function (k) { if (j[k] !== undefined) recebido[k] = j[k]; });
+      } else {
+        var nome = f.name.replace(/\.csv$/i, "").replace(/[-_ ]?\d.*$/, "");
+        if (!M.ESQUEMA[nome]) throw new Error("Nome do CSV não reconhecido: use colaboradores.csv, escala.csv, registos.csv, ausencias.csv ou movimentos_banco.csv");
+        var linhas = lerCSV(txt), opt = ["nota", "origem", "registado_em", "afixada_em", "motivo_suplementar", "pausas", "inicio", "fim", "horas", "filho_3_a_6_declaracao", "updated_at"];
+        var falta = M.ESQUEMA[nome].filter(function (c) { return linhas.length && !(c in linhas[0]) && opt.indexOf(c) < 0; });
+        if (falta.length) throw new Error("Faltam colunas: " + falta.join(", "));
+        recebido[nome] = linhas.map(function (l) { var o = {}; M.ESQUEMA[nome].forEach(function (c) { o[c] = l[c] || ""; }); return o; });
+      }
+      var local = clone(P); local.auditoria = AUD.slice();
+      var mg = M.merge_pacotes(local, recebido), r = M.calcular(mg.pacote), rs = mg.resumo;
+      P = mg.pacote; RES = r;
+      if (P.auditoria) { AUD = M.merge_auditoria(AUD, P.auditoria); delete P.auditoria; }
+      if (P.auditoria_ancora) { AUD_ANCORA = (AUD_ANCORA || []).concat(P.auditoria_ancora); delete P.auditoria_ancora; }
+      gravarAuditoria();
+      var verImp = verificarCadeiaAud(AUD, AUD_ANCORA);
+      registarAuditoria("importar_merge", f.name, "+" + rs.adicionados + " adicionados, " + rs.atualizados + " atualizados, " + rs.conflitos.length + " conflitos");
+      guardar(); iniciarListas();
+      var msg = "Importado (merge) " + esc(f.name) + ": " + rs.adicionados + " adicionados, " + rs.atualizados + " atualizados, " + rs.mantidos + " mantidos, " + rs.conflitos.length + " conflitos. " + r.alertas.length + " alertas.";
+      if (rs.conflitos.length) msg += "<br><small>" + rs.conflitos.slice(0, 10).map(function (c) { return esc(c.tabela + " " + c.id + " (" + c.vencedor + ")"); }).join("; ") + "</small>";
+      var cls = (!verImp.ok) ? "e" : (rs.conflitos.length ? "w" : "o");
+      if (!verImp.ok) msg += avisoCadeiaAud();
+      $("d-msg").innerHTML = '<div class="msg ' + cls + '">' + msg + "</div>"; render();
+    } catch (e) { $("d-msg").innerHTML = '<div class="msg e">Não foi possível importar: ' + esc(e.message) + "</div>"; }
+    ev.target.value = "";
+  };
+  rd.readAsText(f, "utf-8");
+};
+$("d-reset").onclick = function () {
+  if (!exigirGestor()) return;
+  if (!confirm("Apagar os dados deste iPad e repor os dados de exemplo?")) return;
+  P = clone(EXEMPLO); registarAuditoria("repor_exemplo", "dados", ""); guardar(); recalcular(); iniciarListas(); render(); toast("Dados de exemplo repostos");
+};
+
+function iniciarListas() {
+  opcoesEq("r-eq"); opcoesEq("e-eq"); opcoesEq("sa-eq", true); opcoesEq("al-eq", true);
+  opcoesCol("rel-col"); opcoesCol("au-col"); opcoesCol("mv-col");
+  $("au-tipo").innerHTML = M.TIPOS_AUSENCIA.map(function (t) { return '<option value="' + esc(t) + '">' + esc(rot(ROT_AUS, t)) + "</option>"; }).join("");
+  $("mv-tipo").innerHTML = M.TIPOS_MOVIMENTO.map(function (t) { return '<option value="' + esc(t) + '">' + esc(rot(ROT_MOV, t)) + "</option>"; }).join("");
+}
+try {
+  var _u = new URL(location.href);
+  if (_u.searchParams.has("token")) {
+    _u.searchParams.delete("token");
+    var _q = _u.searchParams.toString();
+    history.replaceState({}, "", _u.pathname + (_q ? "?" + _q : "") + _u.hash);
+  }
+} catch (eTok) {}
+AUD_ANCORA = carregarAncoras();
+AUD = carregarAuditoria();
+if (AUD.length > 500) { cortarAuditoria(500); gravarAuditoria(); }
+P = carregar(); recalcular(); iniciarListas(); render();
+$("r-hora").textContent = agoraHM();
+if ("serviceWorker" in navigator && /^https?:/.test(location.protocol)) navigator.serviceWorker.register("sw.js").catch(function () {});
+document.body.setAttribute("data-pronto", "1");
+if (/(?:^|[?&])teste=1(?:&|$)/.test(location.search || "")) {
+  window.__BH__ = { P: function () { return P; }, RES: function () { return RES; }, AUD: function () { return AUD; }, ancora: function () { return AUD_ANCORA; }, estado: function () { return estado; }, mostrar: mostrar, novo_id: novo_id, idDispositivo: idDispositivo, verificarPin: verificarPin, guardarPin: guardarPin, verificarCadeiaAud: verificarCadeiaAud, cortarAuditoria: cortarAuditoria, registarAuditoria: registarAuditoria, sha256hex: sha256hex, temPin: temPin, PIN_ITER: PIN_ITER };
+}
+})();
+</script>
+</body>
+</html>
